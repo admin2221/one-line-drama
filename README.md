@@ -104,6 +104,7 @@ output/<时间戳>/
 ├── characters/presets/    # 预置角色 JSON（GUI 可选）
 ├── workflows/             # ComfyUI 工作流 JSON（供参考/进阶）
 ├── assets/                # 图标
+├── release/               # 内置最新开源版 Windows 安装包（安装向导 + InstallFiles）
 ├── scripts/               # 开发/调试脚本（不参与运行）
 ├── providers.example.json # 云端提供商配置模板（复制为 providers.json 使用）
 ├── requirements.txt       # Python 依赖
@@ -112,17 +113,10 @@ output/<时间戳>/
 
 ## 打包 Windows 安装程序
 
-需要本机安装 Python 3.10+ 与 `pyinstaller`（spec 已排除 torch 等重依赖）：
-
-```powershell
-python -m pip install -r requirements.txt pyinstaller
-powershell -ExecutionPolicy Bypass -File .\build_release.ps1
-```
-
-产物在 `release_os/`（同目录还生成 `release_os.zip`）：
+仓库 `release/` 目录**已内置一份最新开源版安装包**，直接下载使用即可，无需自行打包：
 
 ```
-release_os/
+release/
 ├── 短剧生成器安装向导.exe      # 双击安装（图形界面 + 命令行引擎）
 └── InstallFiles/
     ├── drama-gui.exe
@@ -132,7 +126,15 @@ release_os/
 ```
 
 安装向导把文件复制到 `%LOCALAPPDATA%\Programs\短剧生成器`（可选桌面快捷方式）。
-如需预构建成品，可直接下载本仓库 Releases 或使用仓库内历史发行目录。
+
+如需从源码自行构建（例如改了代码后再出包），需 Python 3.10+ 与 `pyinstaller`（spec 已排除 torch 等重依赖）：
+
+```powershell
+python -m pip install -r requirements.txt pyinstaller
+powershell -ExecutionPolicy Bypass -File .\build_release.ps1
+```
+
+脚本在本地生成 `release_os/`（含整包 `release_os.zip`），已加入 .gitignore 不入库。
 
 ## 关键实现说明
 
@@ -154,10 +156,8 @@ release_os/
 
 - **16GB VRAM**（RTX 4060 Ti 级别）即可运行（逐镜头释放显存）。
 
-## 目录说明与历史
-
-- `短剧项目/`：历史发行快照目录（早期「成品安装包」等分发物），保留仅供参考，不参与当前源码构建。
-
 ## 许可证
 
 [MIT](./LICENSE)。第三方模型（MiniMax H3 / Z-Image / Qwen 等）遵循其各自许可。
+
+> 本项目已完全开源：无激活码、无试用限制。历史商业版本代码已从仓库清除。
