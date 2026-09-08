@@ -7,8 +7,8 @@
 <p align="center"><strong>Describe a story in one sentence — get a complete vertical short drama.</strong> (ComfyUI + MiniMax H3)</p>
 
 <p align="center">
-  <a href="https://admin2221.github.io/comfyui"><img src="https://img.shields.io/badge/Website-Drama%20Factory-ffb84d?style=for-the-badge" alt="Website"></a>
-  <a href="https://github.com/admin2221/comfyui"><img src="https://img.shields.io/badge/中文版-README-4f7cff?style=for-the-badge" alt="中文 README"></a>
+  <a href="https://admin2221.github.io/one-line-drama"><img src="https://img.shields.io/badge/Website-Drama%20Factory-ffb84d?style=for-the-badge" alt="Website"></a>
+  <a href="https://github.com/admin2221/one-line-drama"><img src="https://img.shields.io/badge/中文版-README-4f7cff?style=for-the-badge" alt="中文 README"></a>
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@ Drama Factory turns "write a story" into "type one sentence". It compresses the 
 
 ## Showcase <a id="showcase"></a>
 
-Real output clips generated from a one-sentence prompt (click a poster to play the mp4; online player on the [official site](https://admin2221.github.io/comfyui)):
+Real output clips generated from a one-sentence prompt (click a poster to play the mp4; online player on the [official site](https://admin2221.github.io/one-line-drama)):
 
 <table>
 <tr>
@@ -73,7 +73,7 @@ Prerequisites: a running ComfyUI at `http://127.0.0.1:8188` with the required cu
 (MiniMax H3 ref2va, Z-Image turbo, ComfyUI-llama-cpp_vlm; 16 GB VRAM recommended).
 
 ```bat
-git clone https://github.com/admin2221/comfyui.git
+git clone https://github.com/admin2221/one-line-drama.git
 cd comfyui
 python -m pip install -r requirements.txt
 

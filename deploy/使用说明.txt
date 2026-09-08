@@ -3,7 +3,7 @@
 ## 这是什么
 一句话/一段剧情 → 自动生成完整竖屏短剧（剧本 → 角色定妆 → 逐镜头视频 → 自动拼接成片）。
 本程序为**完全开源版本**：无激活码、无试用限制、免费无限使用。
-源码仓库：https://github.com/admin2221/comfyui （见 README.md）
+源码仓库：https://github.com/admin2221/one-line-drama （见 README.md）
 
 ## 快速开始（GUI）
 双击 `drama-gui.exe`：

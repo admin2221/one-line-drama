@@ -7,8 +7,8 @@
 <p align="center"><strong>输入一句话，自动生成一部完整竖屏短剧。</strong>（ComfyUI + MiniMax H3）</p>
 
 <p align="center">
-  <a href="https://admin2221.github.io/comfyui"><img src="https://img.shields.io/badge/官网-短剧工厂-ffb84d?style=for-the-badge" alt="官网"></a>
-  <a href="https://github.com/admin2221/comfyui/blob/main/README_EN.md"><img src="https://img.shields.io/badge/English-README-4f7cff?style=for-the-badge" alt="English"></a>
+  <a href="https://admin2221.github.io/one-line-drama"><img src="https://img.shields.io/badge/官网-短剧工厂-ffb84d?style=for-the-badge" alt="官网"></a>
+  <a href="https://github.com/admin2221/one-line-drama/blob/main/README_EN.md"><img src="https://img.shields.io/badge/English-README-4f7cff?style=for-the-badge" alt="English"></a>
 </p>
 
 <p align="center">
@@ -58,7 +58,7 @@
 
 ## 成片演示 <a id="showcase"></a>
 
-以下均为输入一句话剧情后自动产出的**成品片段**（点击封面在新窗口播放 mp4；官网在线播放见 [admin2221.github.io/comfyui](https://admin2221.github.io/comfyui)）：
+以下均为输入一句话剧情后自动产出的**成品片段**（点击封面在新窗口播放 mp4；官网在线播放见 [admin2221.github.io/one-line-drama](https://admin2221.github.io/one-line-drama)）：
 
 <table>
 <tr>
@@ -89,7 +89,7 @@
 （MiniMax H3 ref2va、Z-Image turbo、ComfyUI-llama-cpp_vlm；建议 16GB 显存起步）。
 
 ```bat
-git clone https://github.com/admin2221/comfyui.git
+git clone https://github.com/admin2221/one-line-drama.git
 cd comfyui
 python -m pip install -r requirements.txt
 
