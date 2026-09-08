@@ -39,9 +39,9 @@ Real output clips generated from a one-sentence prompt (click a poster to play t
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="assets/showcase/demo1.mp4"><img src="assets/showcase/demo1-poster.jpg" width="230" alt="Demo 1"></a><br><sub><b>Demo 1</b><br>ancient fantasy · 9:16</sub></td>
-<td align="center" width="33%"><a href="assets/showcase/demo2.mp4"><img src="assets/showcase/demo2-poster.jpg" width="230" alt="Demo 2"></a><br><sub><b>Demo 2</b><br>city romance · native audio</sub></td>
-<td align="center" width="33%"><a href="assets/showcase/demo3.mp4"><img src="assets/showcase/demo3-poster.jpg" width="230" alt="Demo 3"></a><br><sub><b>Demo 3</b><br>mystery twist · auto-assembly</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo1.mp4"><img src="assets/showcase/demo1-poster.jpg" width="230" alt="The Adventures of Xio Niu"></a><br><sub><b>The Adventures of the Snail</b><br>3D adventure · rescue at the waterhole</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo2.mp4"><img src="assets/showcase/demo2-poster.jpg" width="230" alt="African Elephant"></a><br><sub><b>Little Elephant</b><br>family warmth · playing at the waterhole</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo3.mp4"><img src="assets/showcase/demo3-poster.jpg" width="230" alt="The Way Home"></a><br><sub><b>The Way Home · Runze Lodge</b><br>return to the village · heirloom seal</sub></td>
 </tr>
 </table>
 

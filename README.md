@@ -62,9 +62,9 @@
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="assets/showcase/demo1.mp4"><img src="assets/showcase/demo1-poster.jpg" width="230" alt="示例一 · 古风穿越"></a><br><sub><b>古风穿越</b><br>一句话成片 · 竖屏 9:16</sub></td>
-<td align="center" width="33%"><a href="assets/showcase/demo2.mp4"><img src="assets/showcase/demo2-poster.jpg" width="230" alt="示例二 · 都市奇缘"></a><br><sub><b>都市奇缘</b><br>角色一致 · 原生音频</sub></td>
-<td align="center" width="33%"><a href="assets/showcase/demo3.mp4"><img src="assets/showcase/demo3-poster.jpg" width="230" alt="示例三 · 悬疑反转"></a><br><sub><b>悬疑反转</b><br>逐镜头成片 · 自动拼接</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo1.mp4"><img src="assets/showcase/demo1-poster.jpg" width="230" alt="《非洲蜗牛奇遇记》"></a><br><sub><b>《非洲蜗牛奇遇记》</b><br>3D 冒险动画 · 小蜗落水，老龟跃水勇救</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo2.mp4"><img src="assets/showcase/demo2-poster.jpg" width="230" alt="《非洲大象》"></a><br><sub><b>《非洲大象》</b><br>家庭温情 · 水塘嬉戏与夕阳依偎</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo3.mp4"><img src="assets/showcase/demo3-poster.jpg" width="230" alt="《归途·润泽山居》"></a><br><sub><b>《归途·润泽山居》</b><br>都市返乡 · 爷爷交出家印与嘱托</sub></td>
 </tr>
 </table>
 
