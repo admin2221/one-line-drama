@@ -1,0 +1,139 @@
+We need answer user's request in Chinese? They ask output only JSON. Need produce final JSON only. Need ensure constraints: title, character English protagonist costume prompt 15-20 words, style English global style 8-10 words, beats length exactly 4, each scene Chinese <=12 chars, brief English 30-40 words. Total 60 sec ~15 shots, 4 acts each 4-5 shots. Story: rainy night delivery rider Chen Mo delivers package to old house, opens door missing ten years brother Chen Ying, black-clad men approach. Need起承转合. Need only JSON first line { last }. No code fences. Need count words? Let's craft carefully.
+
+Need character: English protagonist定妆提示词 15-20 words, covering age gender, face features, hair, clothing style color. Protagonist likely Chen Mo. 15-20 words. Example: "Chen Mo, late 20s East Asian male, sharp jaw, tired eyes, short black hair, yellow raincoat, dark delivery jacket, reflective stripes." Count: Chen(1) Mo2 late3 20s4 East5 Asian6 male7 sharp8 jaw9 tired10 eyes11 short12 black13 hair14 yellow15 raincoat16 dark17 delivery18 jacket19 reflective20 stripes21. Too many. Need 15-20. "Chen Mo, late 20s East Asian male, sharp jaw, tired eyes, short black hair, yellow raincoat, dark jacket." Count: Chen1 Mo2 late3 20s4 East5 Asian6 male7 sharp8 jaw9 tired10 eyes11 short12 black13 hair14 yellow15 raincoat16 dark17 jacket18. Good 18. Covers age gender face hair clothing color. Maybe include style? "delivery jacket" maybe. 18 okay.
+
+Style: English global style 8-10 words, covering era scene, color tone, lighting, quality. "Modern rainy night, cold blue tones, neon reflections, cinematic 4K." Count Modern1 rainy2 night3 cold4 blue5 tones6 neon7 reflections8 cinematic9 4K10. Good.
+
+Beats: 4 acts. Each brief 30-40 words. Need English. Need include what happens, protagonist state/action, location, camera focus. Need total 15 shots? We can mention 4-5 shots per act? The brief maybe not count shots? It says each幕 brief 30-40 words. Need likely include shot count? Could include "Four shots:" but word count. Need 30-40 words. Let's draft and count.
+
+Act1 scene: "暴雨夜接单" (5). Brief: "Opening hook: Chen Mo rides through torrential rain, neon blurred, breathless. He stops before decaying old mansion, package soaked. Wide handheld, then close on trembling hand tapping doorbell." Count Opening1 hook2 Chen3 Mo4 rides5 through6 torrential7 rain8 neon9 blurred10 breathless11 He12 stops13 before14 decaying15 old16 mansion17 package18 soaked19 Wide20 handheld21 then22 close23 on24 trembling25 hand26 tapping27 doorbell28. Need 30-40. Add "rain streaks" maybe. "Opening hook: Chen Mo rides through torrential rain, neon blurred, breathless. He stops before decaying old mansion, package soaked. Wide handheld, then close on trembling hand tapping doorbell, rain streaks." Count Opening1 hook2 Chen3 Mo4 rides5 through6 torrential7 rain8 neon9 blurred10 breathless11 He12 stops13 before14 decaying15 old16 mansion17 package18 soaked19 Wide20 handheld21 then22 close23 on24 trembling25 hand26 tapping27 doorbell28 rain29 streaks30. Good 30.
+
+Act2 scene: "老宅开门" (4). Brief: "Door creaks open; missing brother Chen Ying stands in dim hallway, unchanged, staring. Chen Mo freezes, rain dripping. Medium two-shot, slow push, close on brother's pale face and Mo's shocked eyes." Count Door1 creaks2 open3 missing4 brother5 Chen6 Ying7 stands8 in9 dim10 hallway11 unchanged12 staring13 Chen14 Mo15 freezes16 rain17 dripping18 Medium19 two-shot20 slow21 push22 close23 on24 brother's25 pale26 face27 and28 Mo's29 shocked30 eyes31. 31. Good.
+
+Act3 scene: "黑衣人逼近" (5). Brief: "Conflict escalates: black-clad men emerge from alley, blocking escape. Chen Mo grabs brother, pulls him inside, door slams. Handheld tracking, low angle, close on wet boots and clenched fists." Count Conflict1 escalates2 black-clad3 men4 emerge5 from6 alley7 blocking8 escape9 Chen10 Mo11 grabs12 brother13 pulls14 him15 inside16 door17 slams18 Handheld19 tracking20 low21 angle22 close23 on24 wet25 boots26 and27 clenched28 fists29. Need 30. Add "rain" maybe. "Conflict escalates: black-clad men emerge from alley, blocking escape. Chen Mo grabs brother, pulls him inside, door slams. Handheld tracking, low angle, close on wet boots, clenched fists, rain." Count Conflict1 escalates2 black-clad3 men4 emerge5 from6 alley7 blocking8 escape9 Chen10 Mo11 grabs12 brother13 pulls14 him15 inside16 door17 slams18 Handheld19 tracking20 low21 angle22 close23 on24 wet25 boots26 clenched27 fists28 rain29. Still 29. Add "pounding" 30? "pounding rain" maybe. "Conflict escalates: black-clad men emerge from alley, blocking escape. Chen Mo grabs brother, pulls him inside, door slams. Handheld tracking, low angle, close on wet boots, clenched fists, pounding rain." Count Conflict1 escalates2 black-clad3 men4 emerge5 from6 alley7 blocking8 escape9 Chen10 Mo11 grabs12 brother13 pulls14 him15 inside16 door17 slams18 Handheld19 tracking20 low21 angle22 close23 on24 wet25 boots26 clenched27 fists28 pounding29 rain30. Good.
+
+Act4 scene: "真相与逃离" (6? 真1相2与3逃4离5? Actually 5). Brief: "Turn and climax: brother reveals package contains evidence, black men breach window. Chen Mo shields him, throws package out fire escape, escapes into storm. Slow-motion wide, final close on vanishing bike light." Count Turn1 and2 climax3 brother4 reveals5 package6 contains7 evidence8 black9 men10 breach11 window12 Chen13 Mo14 shields15 him16 throws17 package18 out19 fire20 escape21 escapes22 into23 storm24 Slow-motion25 wide26 final27 close28 on29 vanishing30 bike31 light32. 32. Good. Need结局? Maybe "survival" but okay. Could include "ending". Need 30-40. Good.
+
+Need ensure beats array length 4. Scene names <=12 Chinese chars. "暴雨夜接单" 5, "老宅开门" 4, "黑衣人逼近" 5, "真相与逃离" 5. Good.
+
+Need only JSON. Ensure valid JSON: double quotes, no trailing commas. Need maybe title: "雨夜重逢" or "暴雨夜：失踪哥哥". Title can Chinese. Need maybe "雨夜重逢".
+
+Need check character word count exactly 15-20. "Chen Mo, late 20s East Asian male, sharp jaw, tired eyes, short black hair, yellow raincoat, dark jacket." Count with punctuation? Usually words separated by spaces. Let's count: Chen(1) Mo,(2) late(3) 20s(4) East(5) Asian(6) male,(7) sharp(8) jaw,(9) tired(10) eyes,(11) short(12) black(13) hair,(14) yellow(15) raincoat,(16) dark(17) jacket.(18). Good.
+
+Style 8-10: "Modern rainy night, cold blue tones, neon reflections, cinematic 4K." Count Modern1 rainy2 night,3 cold4 blue5 tones,6 neon7 reflections,8 cinematic9 4K.10. Good.
+
+Need brief word counts maybe punctuation doesn't matter. Let's recount with hyphen? black-clad maybe one word? If hyphenated counts as one? We counted as one. Slow-motion one? We counted Slow-motion as one? Actually "Slow-motion" one. Need if hyphenated maybe one. Let's ensure within 30-40 even if hyphen counted differently? If black-clad counted as two? Then act3 31? Let's see. If hyphen splits, black clad two, Slow-motion two. Act3: Conflict1 escalates2 black3 clad4 men5 emerge6 from7 alley8 blocking9 escape10 Chen11 Mo12 grabs13 brother14 pulls15 him16 inside17 door18 slams19 Handheld20 tracking21 low22 angle23 close24 on25 wet26 boots27 clenched28 fists29 pounding30 rain31. Still 31. Act4: Turn1 and2 climax3 brother4 reveals5 package6 contains7 evidence8 black9 men10 breach11 window12 Chen13 Mo14 shields15 him16 throws17 package18 out19 fire20 escape21 escapes22 into23 storm24 Slow25 motion26 wide27 final28 close29 on30 vanishing31 bike32 light33. 33. Good. Act1: Opening hook: Chen Mo rides through torrential rain, neon blurred, breathless. He stops before decaying old mansion, package soaked. Wide handheld, then close on trembling hand tapping doorbell, rain streaks. Count if hook: maybe "hook:" one? We counted hook as word. If punctuation attached no issue. 30. If "doorbell," one. Good. Act2: Door creaks open; missing brother Chen Ying stands in dim hallway, unchanged, staring. Chen Mo freezes, rain dripping. Medium two-shot, slow push, close on brother's pale face and Mo's shocked eyes. Count: Door1 creaks2 open3 missing4 brother5 Chen6 Ying7 stands8 in9 dim10 hallway11 unchanged12 staring13 Chen14 Mo15 freezes16 rain17 dripping18 Medium19 two-shot20 slow21 push22 close23 on24 brother's25 pale26 face27 and28 Mo's29 shocked30 eyes31. If two-shot split? 32. Good.
+
+Need maybe include 4-5 shots? The brief doesn't explicitly state shot count, but target total 15. Could include "Four shots" in each? But word count. Maybe not necessary? User says 分4幕每幕4-5镜头, beats brief供下一步逐幕扩写镜头时直接使用. It may be okay if brief implies multiple shots. But to be safe, include shot count? Need 30-40. Could add "Four shots:" at start, but then counts. Let's see if we can incorporate without exceeding. Act1 currently 30. Add "Four shots:" +3 =33. Good. Act2 31+3=34. Act3 30+3=33. Act4 32+3=35. That would satisfy each act 4-5 shots? But "Four shots" for all acts means total 16, not 15. Need total about 15. Could have 4,4,4,3? But requirement each act 4-5, total 15 means 4+4+4+3? No 3 not allowed. 4+4+4+4=16, 4+4+4+5=17, 4+4+5+4=17, 4+5+4+4=17, 5+4+4+4=17. To total 15 with each 4-5 impossible? 4*4=16 minimum. User says target total 60 sec, about 15 shots. 分4幕每幕4-5镜头. Minimum 16. "约15" maybe okay 16. But if we specify four shots each, total 16. Could be okay. But if we want 15, impossible with 4 acts each 4-5. Maybe one act 3? But requirement says each 4-5. So 16. "约15" approximate. We can not specify shot counts to avoid conflict. But maybe they expect 15? Could have 4,4,4,4 =16. Fine.
+
+Need maybe include "four shots" not necessary. The brief can mention camera moves. The next step can expand. I think no shot count needed. But requirement "每幕 4-5 个镜头" maybe should be reflected? It says beats brief 用英文写清...镜头重点. Not necessarily count. But to be safe, maybe include "Four shots" in each? It would make total 16. But if they check total 15? They said about 15. 16 okay. However if they check each brief 30-40, adding Four shots okay. But if they check total shots? Not explicit in JSON. Could include "Four shots" in each, but then total 16. If they wanted 15, impossible. Maybe better not include counts.
+
+Need ensure no reasoning in output. Final JSON only.
+
+Double-check JSON escaping: apostrophes in brother's, Mo's okay inside double quotes. Hyphen okay. Need no newline? Can pretty print. First line { last }. Good.
+
+Potential issue: character prompt 15-20 words. It includes "Chen Mo" maybe name not needed? It's okay. Could be "late 20s East Asian male, sharp jaw, tired eyes, short black hair, yellow raincoat, dark delivery jacket." Count late1 20s2 East3 Asian4 male5 sharp6 jaw7 tired8 eyes9 short10 black11 hair12 yellow13 raincoat14 dark15 delivery16 jacket17. 17. Better no name? But protagonist name maybe. The field is protagonist定妆提示词, can include name. 18 okay.
+
+Style 8-10: "Modern rainy night, cold blue tones, neon reflections, cinematic 4K." Good.
+
+Need title maybe "雨夜重逢". Good.
+
+Let's consider story beats: Act1 opening hook, Act2 conflict? Actually opening, development, turn, climax. Act3 black men approach, Act4 reveal and escape. Good.
+
+Need maybe "门外黑衣人逼近" included. Yes.
+
+Need maybe "失踪十年的哥哥陈影" included. Yes.
+
+Need maybe "送快递" package. Yes.
+
+Need maybe "老宅" old mansion. Yes.
+
+Need maybe "暴雨夜" style. Yes.
+
+Need maybe "陈默" protagonist. Yes.
+
+Need maybe "陈影" brother. Yes.
+
+Now final. Ensure no code block. final starts { ends }.
+
+Let's maybe adjust briefs to exactly 30-40. Let's count more rigorously with standard word splitting by spaces, punctuation attached. Act1:
+"Opening hook: Chen Mo rides through torrential rain, neon blurred, breathless. He stops before decaying old mansion, package soaked. Wide handheld, then close on trembling hand tapping doorbell, rain streaks."
+Words:
+Opening1
+hook:2
+Chen3
+Mo4
+rides5
+through6
+torrential7
+rain,8
+neon9
+blurred,10
+breathless.11
+He12
+stops13
+before14
+decaying15
+old16
+mansion,17
+package18
+soaked.19
+Wide20
+handheld,21
+then22
+close23
+on24
+trembling25
+hand26
+tapping27
+doorbell,28
+rain29
+streaks.30
+Good.
+
+Act2:
+"Door creaks open; missing brother Chen Ying stands in dim hallway, unchanged, staring. Chen Mo freezes, rain dripping. Medium two-shot, slow push, close on brother's pale face and Mo's shocked eyes."
+Door1 creaks2 open;3 missing4 brother5 Chen6 Ying7 stands8 in9 dim10 hallway,11 unchanged,12 staring.13 Chen14 Mo15 freezes,16 rain17 dripping.18 Medium19 two-shot,20 slow21 push,22 close23 on24 brother's25 pale26 face27 and28 Mo's29 shocked30 eyes.31. Good.
+
+Act3:
+"Conflict escalates: black-clad men emerge from alley, blocking escape. Chen Mo grabs brother, pulls him inside, door slams. Handheld tracking, low angle, close on wet boots, clenched fists, pounding rain."
+Conflict1 escalates:2 black-clad3 men4 emerge5 from6 alley,7 blocking8 escape.9 Chen10 Mo11 grabs12 brother,13 pulls14 him15 inside,16 door17 slams.18 Handheld19 tracking,20 low21 angle,22 close23 on24 wet25 boots,26 clenched27 fists,28 pounding29 rain.30. Good.
+
+Act4:
+"Turn and climax: brother reveals package contains evidence, black men breach window. Chen Mo shields him, throws package out fire escape, escapes into storm. Slow-motion wide, final close on vanishing bike light."
+Turn1 and2 climax:3 brother4 reveals5 package6 contains7 evidence,8 black9 men10 breach11 window.12 Chen13 Mo14 shields15 him,16 throws17 package18 out19 fire20 escape,21 escapes22 into23 storm.24 Slow-motion25 wide,26 final27 close28 on29 vanishing30 bike31 light.32. Good.
+
+Could "fire escape" two words, okay. "out fire escape" maybe awkward but okay. Maybe "out the fire escape" adds word. Not needed.
+
+Need maybe "结局" in act4? It says escapes into storm, vanishing bike light. Good.
+
+Potential issue: "black men" in act4 but earlier black-clad. okay.
+
+Need maybe "package contains evidence" turn. Good.
+
+Now final JSON. Ensure no trailing spaces? fine.
+</think>
+
+{
+  "title": "雨夜重逢",
+  "character": "Chen Mo, late 20s East Asian male, sharp jaw, tired eyes, short black hair, yellow raincoat, dark jacket.",
+  "style": "Modern rainy night, cold blue tones, neon reflections, cinematic 4K.",
+  "beats": [
+    {
+      "scene": "暴雨夜接单",
+      "brief": "Opening hook: Chen Mo rides through torrential rain, neon blurred, breathless. He stops before decaying old mansion, package soaked. Wide handheld, then close on trembling hand tapping doorbell, rain streaks."
+    },
+    {
+      "scene": "老宅开门",
+      "brief": "Door creaks open; missing brother Chen Ying stands in dim hallway, unchanged, staring. Chen Mo freezes, rain dripping. Medium two-shot, slow push, close on brother's pale face and Mo's shocked eyes."
+    },
+    {
+      "scene": "黑衣人逼近",
+      "brief": "Conflict escalates: black-clad men emerge from alley, blocking escape. Chen Mo grabs brother, pulls him inside, door slams. Handheld tracking, low angle, close on wet boots, clenched fists, pounding rain."
+    },
+    {
+      "scene": "真相与逃离",
+      "brief": "Turn and climax: brother reveals package contains evidence, black men breach window. Chen Mo shields him, throws package out fire escape, escapes into storm. Slow-motion wide, final close on vanishing bike light."
+    }
+  ]
+}

@@ -20,3 +20,18 @@ last_prompt_id.txt
 # IDE
 .vscode/
 .idea/
+
+# 构建产物/中间产物（单文件超过 GitHub 100MB 上限，无法上传）
+dist/
+build/
+
+# 日志与运行记录
+*.log
+probe_*.txt
+
+# 运行时配置：可能包含真实 API Key / 本地路径，禁止公开
+providers.json
+providers.json.bak
+providers.json.bak2
+dyt.json
+image_api.json

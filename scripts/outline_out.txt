@@ -1,0 +1,55 @@
+我们需要回答用户：只输出 JSON，第一行 {，最后一行 }，不要代码块。需要作为短剧导演编剧，根据一句话梗概做全剧总纲。必须 17 幕，每幕 4-5 镜头，总时长 300 秒约75镜头。character 英文主角定妆提示词 15-20词，涵盖年龄性别、脸型五官、发型发色、服饰款式与颜色。style 英文全局风格 8-10词，涵盖时代场景、色调、光影、画质。beats 数组正好17，每幕 scene 中文场景名≤12字，brief 英文剧情要点与运镜方向 30-40词。故事起承转合：开场钩子、冲突升级、转折、高潮、结局。
+
+需要只输出 JSON。先构思。
+
+主角：陈默？外卖骑手。英文 character: "Chen Mo, 28-year-old East Asian male, angular face, determined eyes, short black wet hair, dark yellow raincoat, black delivery jacket, rain-soaked." 数词：Chen(1) Mo(2) 28-year-old(3?) East(4) Asian(5) male(6) angular(7) face(8) determined(9) eyes(10) short(11) black(12) wet(13) hair(14) dark(15) yellow(16) raincoat(17) black(18) delivery(19) jacket(20) rain-soaked(21). 需15-20词。可以删 rain-soaked? "Chen Mo, 28-year-old East Asian male, angular face, determined eyes, short black wet hair, dark yellow raincoat, black delivery jacket." 数：Chen1 Mo2 28-year-old3 East4 Asian5 male6 angular7 face8 determined9 eyes10 short11 black12 wet13 hair14 dark15 yellow16 raincoat17 black18 delivery19 jacket20. 好。
+
+style 8-10词：需涵盖时代场景、色调、光影、画质。例如 "Contemporary rainy Chinese urban night, teal amber palette, cinematic rain lighting, 4K." 数：Contemporary1 rainy2 Chinese3 urban4 night5 teal6 amber7 palette8 cinematic9 rain10 lighting11 4K12. 太多。需要8-10词。 "Contemporary rainy Chinese urban night, teal palette, cinematic rain lighting, 4K." 数：Contemporary1 rainy2 Chinese3 urban4 night5 teal6 palette7 cinematic8 rain9 lighting10 4K11. 11。去掉 4K? "Contemporary rainy Chinese urban night, teal palette, cinematic rain lighting, sharp." 10? Contemporary1 rainy2 Chinese3 urban4 night5 teal6 palette7 cinematic8 rain9 lighting10 sharp11. 不行。
+"Modern rainy Chinese city night, teal amber, cinematic rain, 4K." 数 Modern1 rainy2 Chinese3 city4 night5 teal6 amber7 cinematic8 rain9 4K10. 涵盖时代场景 modern Chinese city night, 色调 teal amber, 光影 cinematic rain? 画质 4K. 可以。或 "Contemporary rainy Chinese city night, teal amber, cinematic rain, 4K." 10? Contemporary1 rainy2 Chinese3 city4 night5 teal6 amber7 cinematic8 rain9 4K10. 好。
+
+17幕：目标每幕4-5镜头。总75镜头。可以 17*4=68, 加7个5镜头 =75。需要不必在JSON写镜头数，但总时长300秒。brief 30-40词。要英文。scene中文≤12字。
+
+剧情：暴雨夜外卖骑手陈默送神秘快递到城中村老宅，开门失踪十年哥哥陈影。哥哥受伤，说盒里是给楼下病重女儿救命药，门外黑衣人逼近。需要扩展：起承转合。可能陈默以为诈骗/幻觉，进入老宅，发现哥哥真伤，楼下女儿病重（可能陈影女儿？楼下病重女儿是谁？梗概：盒里是给楼下病重女儿救命的药。可能是陈影的女儿？需要合理。可以设定楼下病重小女孩是陈影十年前失踪时留下/被收养？或者陈默妹妹？为了戏剧：楼下病重女儿是陈影的女儿，十年前因陈影被陷害失踪而病重，陈影冒死取药。黑衣人追债，实际是陈影被诬陷欠债/卷款。陈默选择保护哥哥和女孩，利用外卖员熟悉城中村地形/电动车/雨夜逃脱，最终揭露黑衣人老板就是当年陷害者，哥哥牺牲或活？短剧高潮结局：陈默把药送到楼下，女孩获救，哥哥倒下但被救，黑衣人被打/警察？需要总纲。
+
+17幕：
+1 暴雨接单（开场钩子）：陈默在雨中等单，接到高价神秘订单，地址城中村老宅，系统异常。镜头：手持、特写手机、全景雨街。
+2 雨夜骑行：穿越城中村，暴雨，手机导航失灵，神秘包裹湿透，远处老宅灯。镜头：跟拍、低角度、快切。
+3 老宅门前：敲门，门开哥哥陈影出现，陈默震惊。镜头：门缝、特写脸、慢镜。
+4 哥哥现身：陈影受伤，说别声张，药在盒里。陈默怀疑。镜头：室内昏暗、双人特写。
+5 救命药：陈影解释楼下女儿病重，药是最后希望；陈默看到旧照片/证据。镜头：楼下窗户、药盒特写。
+6 楼下病童：陈默下楼查看，病重女孩（陈影女儿小影）呼吸微弱，母亲/邻居? 镜头：病房/出租屋、手持、特写监护仪。
+7 黑衣人逼近：门外雨声、脚步、黑衣人包围，威胁交药和哥哥。镜头：门镜、窗外、阴影。
+8 冲突升级：陈默想报警但手机无信号/被干扰，哥哥伤重，药必须送。镜头：手机无信号、雨窗、紧张特写。
+9 真相碎片：陈影透露十年前被陷害欠债/公司破产，黑衣人老板追杀，药是老板仓库偷出。镜头：闪回/旧文件、快切。
+10 雨夜抉择：陈默选择留下保护哥哥和女孩，用外卖箱藏药，准备转移。镜头：特写手、药盒藏入、眼神。
+11 逃离老宅：从后巷/天台/雨棚逃跑，黑衣人对峙，陈默骑车冲入雨幕。镜头：全景追逐、手持、慢镜。
+12 城中村追逐：电动车在窄巷、积水、霓虹，黑衣人摩托/车追，女孩在医院? 需要送药到医院? 梗概楼下病重女儿，可能就在楼下医院? 可以送药到楼下诊所/医院。追逐到楼下诊所。镜头：跟拍、雨灯、撞水。
+13 药盒争夺：诊所/楼下房间，黑衣人破门，陈影用身体挡，药盒差点被夺。镜头：特写药盒、慢镜、近身搏斗。
+14 反转：女孩突然认出哥哥，陈默发现黑衣人老板是当年合伙人/债主，药其实被调包? 或者女孩血型/药关键。需要转折：黑衣人老板出现，称药是假的/陈影骗人，但陈默发现药真，女孩需要立即注射。镜头：老板特写、药盒打开、慢镜。
+15 高潮：陈默利用外卖电动车/雨夜陷阱/老宅电路/消防水带? 打晕黑衣人，把药送到女孩身边。哥哥倒下。镜头：动作、慢镜、雨光。
+16 结局前：女孩用药稳定，警察/救护车到，老板被捕，陈影昏迷但获救。镜头：晨光? 雨停、医院走廊、特写手。
+17 尾声：陈默继续送外卖，手机显示订单完成/新订单，与哥哥/女孩短暂联系，雨停霓虹。镜头：全景、特写手机、微笑。
+
+需要每幕 brief 30-40词英文。必须每幕 scene 中文≤12字。需要确保 brief 词数 30-40。逐条写并计数。
+
+可以写 brief 约35词。需要英文剧情要点与运镜方向。每幕包含发生什么、主角状态动作、场景地点、镜头重点。
+
+幕1 scene "暴雨接单" (4字)。brief: "Chen Mo waits under neon rain, receives a high-priced mysterious order to an old village house. His phone glitches. Handheld close-ups of rain-soaked phone, wide rain street, urgent rain sound." Count: Chen1 Mo2 waits3 under4 neon5 rain6 receives7 a8 high-priced9 mysterious10 order11 to12 an13 old14 village15 house16 His17 phone18 glitches19 Handheld20 close-ups21 of22 rain-soaked23 phone24 wide25 rain26 street27 urgent28 rain29 sound30. 30词。可以。但 high-priced 连字符算一个？通常空格分词。rain-soaked 一个。OK 30。
+
+幕2 "雨夜骑行"。brief: "Chen Mo rides through flooded alleys, package leaking, navigation failing. Low-angle tracking shots, fast cuts of splashes, distant old house lights, rain reflections on wet asphalt." Count: Chen1 Mo2 rides3 through4 flooded5 alleys6 package7 leaking8 navigation9 failing10 Low-angle11 tracking12 shots13 fast14 cuts15 of16 splashes17 distant18 old19 house20 lights21 rain22 reflections23 on24 wet25 asphalt26. 26. Need 30-40. Add "tense engine hum" 28? "tense engine hum" 3: tense27 engine28 hum29. Need 30: "tense engine hum." tense27 engine28 hum29. Add "alone" 30. "alone" maybe. Full: "Chen Mo rides through flooded alleys, package leaking, navigation failing. Low-angle tracking shots, fast cuts of splashes, distant old house lights, rain reflections on wet asphalt, tense engine hum, alone." Count: Chen1 Mo2 rides3 through4 flooded5 alleys6 package7 leaking8 navigation9 failing10 Low-angle11 tracking12 shots13 fast14 cuts15 of16 splashes17 distant18 old19 house20 lights21 rain22 reflections23 on24 wet25 asphalt26 tense27 engine28 hum29 alone30. Good.
+
+幕3 "老宅门前"。brief: "Chen Mo knocks on a decaying wooden door in a dim old village house. It opens slowly. Handheld peephole view, close-up of trembling hand, slow reveal of Chen Ying's scarred face." Count: Chen1 Mo2 knocks3 on4 a5 decaying6 wooden7 door8 in9 a10 dim11 old12 village13 house14 It15 opens16 slowly17 Handheld18 peephole19 view20 close-up21 of22 trembling23 hand24 slow25 reveal26 of27 Chen28 Ying's29 scarred30 face31. 31. Good.
+
+幕4 "哥哥现身"。brief: "Chen Ying, injured and pale, pulls Chen Mo inside, warning him not to speak. Dim interior, two-shot close-ups, trembling hands, rain outside, shocked silence between brothers." Count: Chen1 Ying2 injured3 and4 pale5 pulls6 Chen7 Mo8 inside9 warning10 him11 not12 to13 speak14 Dim15 interior16 two-shot17 close-ups18 trembling19 hands20 rain21 outside22 shocked23 silence24 between25 brothers26. 26. Need 30-40. Add "fear in eyes" 3: fear27 in28 eyes29. Need 30: "fear in eyes." 29? Let's recount: after brothers26 fear27 in28 eyes29. Need one more: "fear in his eyes" fear27 in28 his29 eyes30. Good. Full: "Chen Ying, injured and pale, pulls Chen Mo inside, warning him not to speak. Dim interior, two-shot close-ups, trembling hands, rain outside, shocked silence between brothers, fear in his eyes." Count 30? Chen1 Ying2 injured3 and4 pale5 pulls6 Chen7 Mo8 inside9 warning10 him11 not12 to13 speak14 Dim15 interior16 two-shot17 close-ups18 trembling19 hands20 rain21 outside22 shocked23 silence24 between25 brothers26 fear27 in28 his29 eyes30. Good.
+
+幕5 "救命药"。brief: "Chen Ying reveals the box contains life-saving medicine for a dying girl downstairs. Close-ups of medicine box, old photo, weak brother breathing, urgent whispers, rain tapping window." Count: Chen1 Ying2 reveals3 the4 box5 contains6 life-saving7 medicine8 for9 a10 dying11 girl12 downstairs13 Close-ups14 of15 medicine16 box17 old18 photo19 weak20 brother21 breathing22 urgent23 whispers24 rain25 tapping26 window27. 27. Need 30. Add "teal shadows" 2? 29. "teal shadows, fear" 3? Let's add "teal shadows, fear" after window: teal28 shadows29 fear30. Full: "Chen Ying reveals the box contains life-saving medicine for a dying girl downstairs. Close-ups of medicine box, old photo, weak brother breathing, urgent whispers, rain tapping window, teal shadows, fear." Count 30. Good.
+
+幕6 "楼下病童"。brief: "Chen Mo goes downstairs to a cramped rental room, finds Chen Ying's sick daughter barely breathing. Handheld shaky camera, close-up of weak chest, oxygen monitor, frightened child." Count: Chen1 Mo2 goes3 downstairs4 to5 a6 cramped7 rental8 room9 finds10 Chen11 Ying's12 sick13 daughter14 barely15 breathing16 Handheld17 shaky18 camera19 close-up20 of21 weak22 chest23 oxygen24 monitor25 frightened26 child27. Need 30. Add "teal light, panic" 3? 30. "teal light, panic" teal28 light29 panic30. Full: "...frightened child, teal light, panic." Count 30. Good.
+
+幕7 "黑衣人逼近"。brief: "Black-suited men surround the old house in rain, demanding the medicine and Chen Ying. Peephole shots, shadows at window, muffled footsteps, close-up of Chen Mo's fear." Count: Black-suited1 men2 surround3 the4 old5 house6 in7 rain8 demanding9 the10 medicine11 and12 Chen13 Ying14 Peephole15 shots16 shadows17 at18 window19 muffled20 footsteps21 close-up22 of23 Chen24 Mo's25 fear26. Need 30. Add "low rumble, threat" 3? low27 rumble28 threat29. Need one: "low rumble, threat, rain" 4? low27 rumble28 threat29 rain30. Good. Full: "...fear, low rumble, threat, rain." Count 30.
+
+幕8 "信号中断"。brief: "Chen Mo tries calling police, but phone has no signal and gets jammed. Close-ups of dead screen, rain on glass, brother's bleeding wound, tense silence, approaching knocks." Count: Chen1 Mo2 tries3 calling4 police5 but6 phone7 has8 no9 signal10 and11 gets12 jammed13 Close-ups14 of15 dead16 screen17 rain18 on19 glass20 brother's21 bleeding22 wound23 tense24 silence25 approaching26 knocks27. Need 30. Add "heartbeat, fear, rain" 3? heartbeat28 fear29 rain30. Good. Full: "...knocks, heartbeat, fear, rain." Count 30.
+
+幕9 "真相碎片"。brief: "Chen Ying whispers that ten years ago he was framed for debt by a corrupt boss. Quick flashback cuts of old documents, signature, warehouse, rain overlay, desperate confession." Count: Chen1 Ying2 whispers3 that4 ten5 years6 ago7 he8 was9 framed10 for11 debt12 by13 a14 corrupt15 boss16 Quick17 flashback18 cuts19 of20 old21 documents22 signature23 warehouse24 rain25 overlay26 desperate27 confession28. Need 30. Add "teal flash, pain" 3? teal29 flash30 pain31 too many. Need 2: "teal flash" 29? Wait 28 +2 =30. Add "teal flash". Full: "...confession, teal flash." Count: Chen1 Ying2 whispers3 that4 ten5 years6 ago7 he8 was9 framed10 for11 debt12 by13 a14 corrupt15 boss16 Quick17 flashback18 cuts19 of20 old21 documents22 signature23 warehouse24 rain25 overlay26 desperate27 confession28 teal29 flash30. Good.
+
+幕10 "雨夜抉择"。brief: "Chen Mo decides to protect his brother and the girl. He hides medicine in his delivery box. Close-up of hands, rain-soaked jacket, determined eyes, slow push-in." Count: Chen1 Mo2 decides3 to4 protect5 his6 brother7 and8 the9 girl10 He11 hides12 medicine13 in14 his15 delivery16 box17 Close-up18 of19 hands

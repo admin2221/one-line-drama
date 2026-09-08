@@ -1,103 +1,102 @@
-# ComfyUI 一句话短剧流水线
+# 短剧工厂（Drama Factory）
 
-把**一句话故事梗概**自动扩写成一部 **20 镜头短剧视频**。
+一句话生成一部完整竖屏短剧。整合了项目里两个已验证的 ComfyUI 工作流：
+
+- **imageai.json**：`llama_cpp` 视觉概念设计师提示词增强 → **Z-Image turbo** 文生图（8 步）
+- **h3hbai.json**：**MiniMax H3 ref2va** 多参视频（参考图 `<Picture 1>` + 原生音频，竖屏 9:16）
 
 ## 流程
 
 ```
-一句话梗概
-  → LLM 剧本生成（Qwen3.5-9B，输出 20 镜头 JSON）
-  → 镜头 1：Z-Image 参考图 → H3 视频 → RTX 超分 → 合成 → 提取尾帧
-  → 镜头 2：H3 视频（用镜头 1 尾帧做首帧）→ RTX → 合成 → 尾帧
-  → ...（严格串行，镜头 N 依赖镜头 N-1 尾帧）
-  → 镜头 20
-  → mergeVideos 串联 20 个片段
-  → 保存完整短剧
+一句话剧情
+   │  ① LLM 剧本导演（Qwen3.5-9B）→ 角色定妆 + N 个分镜 JSON
+   ▼
+   │  ② LLM 视觉概念设计师增强 → Z-Image 生成角色定妆图 → 上传 input
+   ▼
+   │  ③ 逐镜头 MiniMax H3 ref2va 生成视频（共用定妆图 <Picture 1>，原生音频）
+   ▼
+   │  ④ 全部镜头 ffmpeg 自动拼接 → final_drama.mp4
 ```
 
-## 特性
+- **角色一致性**：所有镜头共用同一张定妆图（`ref_image_0`），主角外观一致
+- **无限时长**：镜头数由剧本决定，逐镜头循环生成、逐个保存，支持断点续跑
+- **逐镜头独立提交**：每镜头一个独立 API prompt，跑完释放显存，规避单一大工作流的 OOM
 
-- **20 镜头自动生成**：一句话 → 完整短剧，全程无人工干预
-- **严格串行**：尾帧数据依赖链 + `ImpactExecutionOrderController`，镜头 1→20 顺序执行，避免 VRAM 抢占
-- **480p 输出**：864×480（16:9），H3 视频生成
-- **RTX 超分**（可选）：每个镜头独立 `RTXVideoSuperResolution`，带全局总开关
-- **帧数限制**：每镜头 3-5 秒（≤124 帧），避免 VAEDecode GPU OOM
-- **递增 seed**：20 个镜头 seed 递增，画面有差异且可复现
+## 快速开始
 
-## 目录结构
+在 `D:\Comfyui` 下运行（ComfyUI 服务保持 `http://127.0.0.1:8188` 在线）：
 
-```
-.
-├── workflows/
-│   └── 一句话短剧20镜头.json      # 主工作流（566 节点）
-└── scripts/
-    ├── gen_20shots.py             # 20 镜头扩展生成器
-    ├── gen_master.py              # 主生成器
-    ├── add_switch_and_chaining.py # RTX 开关 + 尾帧串行链
-    ├── add_shotlist.py            # 分镜列表节点
-    ├── fix_seed_merge.py          # 递增 seed + 强制 merge 串行
-    ├── fix_oom2.py                # OOM 修复（帧数上限 124）
-    ├── fix_llm.py                 # LLM seed 固定 + 停止指令
-    ├── fix_json_truncation2.py    # JSON 截断修复（max_tokens 4096）
-    ├── set_480p.py                # 480p 分辨率设置
-    ├── wf2api_full.py             # 工作流 → API prompt 转换器
-    ├── deep_check2.py             # 工作流完整性校验
-    ├── check_widgets.py           # widget 加载校验
-    ├── remove_useless.py          # 清理无用节点
-    ├── reachability.py            # 可达性分析
-    ├── run_drama_pipeline.py      # 运行流水线
-    ├── submit_run.py              # 提交工作流到 ComfyUI
-    ├── monitor_loop.py            # 执行进度监控
-    └── validate_wf.py             # 工作流验证
+```bat
+:: 方式一：直接一句话
+python comfyui-drama\factory\drama_factory.py "一个落魄书生在雨夜捡到一枚能穿越时空的古镜"
+
+:: 方式二：断点续跑（跳过已生成的镜头）
+python comfyui-drama\factory\drama_factory.py "故事..." --resume
+
+:: 方式三：复用已有剧本 JSON，跳过 LLM 阶段
+python comfyui-drama\factory\drama_factory.py --script-json comfyui-drama\output\xxx\script.json
 ```
 
-## 使用方法
+## 常用参数
 
-### 1. 导入工作流
+| 参数 | 默认 | 说明 |
+|------|------|------|
+| `--url` | `http://127.0.0.1:8188` | ComfyUI 地址 |
+| `--steps` | `16` | H3 采样步数（越高越精细、越慢） |
+| `--megapixels` | `0.4` | H3 分辨率（0.4 ≈ 竖屏 480×864） |
+| `--aspect` | `9:16 (Portrait Widescreen)` | 画面比例 |
+| `--width` / `--height` | — | 强制分辨率（覆盖比例计算） |
+| `--no-enhance` | 关 | 跳过定妆图 LLM 增强 |
+| `--resume` | 关 | 断点续跑 |
+| `--reencode` | 关 | 拼接时强制重编码 |
+| `--script-json` | — | 复用已有剧本，跳过 LLM |
+| `--target-seconds` | — | 目标总时长（秒），≥90s 时自动分幕扩写（如 180 → 约 45 镜头） |
+| `--plan-only` | 关 | 只生成剧本并预览（镜头数/总时长/预计耗时），不生成画面 |
+| `--output` | `output/时间戳` | 输出目录 |
 
-把 `workflows/一句话短剧20镜头.json` 放入 ComfyUI 的 workflows 目录：
+## 输出目录结构
 
 ```
-ComfyUI/user/default/workflows/
+output/<时间戳>/
+├── script.json        # 剧本（含 character/style/shots）
+├── llm_raw.txt        # LLM 原始输出（仅解析失败时生成，供排查）
+├── character.png      # 角色定妆图
+├── shots/
+│   ├── shot_001.mp4
+│   └── ...
+└── final_drama.mp4    # 完整短剧
 ```
 
-在 ComfyUI 界面加载该工作流。
+## 代码结构
 
-### 2. 设置一句话剧情
-
-找到节点 `① 一句话剧情`（node 100），写入你的故事梗概，例如：
-
-> 古代美女在河边捡到一支玫瑰，意外穿越到了罗马帝国
-
-### 3. 运行
-
-点击 **Queue Prompt** 即可。也可以命令行提交：
-
-```bash
-python scripts/wf2api_full.py <工作流.json> <输出api.json>
-python scripts/submit_run.py
-python scripts/monitor_loop.py
+```
+factory/
+├── drama_factory.py   # 主入口：四阶段编排
+├── generator.py       # ComfyUI API prompt 生成器（模型/采样常量）
+├── client.py          # ComfyUI HTTP 客户端（提交/轮询/上传/下载）
+├── concat.py          # ffmpeg 视频拼接
+├── prompts.py         # 剧本导演 / 视觉概念设计师提示词
+└── prompts/*.txt      # 外部提示词原文（提取自工作流）
 ```
 
-## 依赖
+## 关键实现说明
+
+- **参考图引用**：`MiniMaxH3ReferenceToVideo` 的 `ref_images.ref_image_0` 对应提示词中的 `<Picture 1>`（1-based，见 `comfy/text_encoders/minimax.py`）。定妆图经 `/upload/image` 上传到 input 目录，镜头内用 `LoadImage` 加载。
+- **帧数换算**：`duration 秒 → round(dur*24) → snap 到 17k+5 网格`（H3 的 length 约束，124 帧 ≈ 5 秒）。
+- **文本输出捕获**：LLM 文本经 `ShowText|pysssss`（output_node）写入 history，由 `client.first_text()` 提取。
+
+## 依赖与硬件
 
 | 组件 | 说明 |
 |------|------|
-| ComfyUI | 最新版 |
-| ComfyUI-llama-cpp_vlm | LLM 剧本生成（Qwen3.5-9B） |
-| MiniMax H3 | 视频生成（i2v） |
-| comfyui-art-venture | GetObjectFromJson / JSON 工具 |
-| comfyui-impact-pack | ImpactExecutionOrderController |
-| comfyui-easy-media | easy mergeVideos / imageSwitch |
-| XB_ToolBox | ResolutionSelector |
-| nvvfx SDK | RTX 超分（可选） |
+| ComfyUI 0.30.0 | `http://127.0.0.1:8188` |
+| ComfyUI-llama-cpp_vlm | LLM 剧本/增强（Qwen3.5-9B） |
+| MiniMax H3 (ref2va) | 视频生成 + 原生音频 |
+| Z-Image turbo | 角色定妆图 |
+| ffmpeg | `D:\Comfyui\python\ffmpeg.exe`（拼接用） |
 
-## 硬件要求
+- **16GB VRAM**（RTX 4060 Ti 级别）即可运行（逐镜头释放显存）。
 
-- **16GB VRAM**（RTX 4060 Ti 级别），H3 视频生成 + RTX 超分
-- **≥32GB 系统内存**（merge 链用 torch.cat 合并帧）
+## 历史方案
 
-## 已知问题
-
-- **RTX 4x 超分会导致 merge OOM**：RTX 4x 把 480p 放大到 3456×1920（每帧 76MB float32），`easy mergeVideos` 的 `torch.cat` 合并 20 镜头时系统内存爆炸。当前默认**关闭 RTX 总开关**（node 900 = false），走 480p 原生帧。若要启用 RTX，需将 merge 改为 ffmpeg 流式合并（磁盘）而非 torch.cat（内存）。
-- **LLM 生成偶发卡死**：已通过固定 seed + 强化停止指令缓解。
+旧目录还保留 `一句话短剧20镜头.json`（566 节点单一大工作流，i2v + RTX 超分 + 尾帧串行）供参考，但其 RTX 4x 超分会导致 merge OOM，且单工作流难以断点续跑。新工厂采用逐镜头独立提交 + ffmpeg 磁盘拼接，规避了这些问题。

@@ -1,0 +1,249 @@
+We need answer user's request: produce JSON only, no code blocks, first line { last }. Need think in English? User Chinese. Need ensure JSON valid. Need 17 beats exactly. Need character prompt 15-20 words English. style 8-10 words English. beats scene <=12 Chinese chars, brief English 30-40 words. Need story 300 sec 75 shots, 17 scenes 4-5 shots each. Need only JSON. Need no reasoning. Need count words? We can craft carefully. Need ensure briefs 30-40 words each. Let's design.
+
+Title: maybe "Rain Shadow" or "The Missing Brother". Character: protagonist Chen Mo? English prompt 15-20 words: "Chen Mo, 28, East Asian male, angular face, tired eyes, short black hair, soaked yellow raincoat, dark delivery jacket, rain-streaked face." Count: Chen(1) Mo2? Let's count words: Chen(1) Mo(2) 28(3) East(4) Asian(5) male(6) angular(7) face(8) tired(9) eyes(10) short(11) black(12) hair(13) soaked(14) yellow(15) raincoat(16) dark(17) delivery(18) jacket(19) rain-streaked(20) face(21). Too many. Need 15-20. Maybe "Chen Mo, 28, East Asian male, angular face, tired eyes, short black hair, soaked yellow raincoat, dark jacket." Count: Chen1 Mo2 28 3 East4 Asian5 male6 angular7 face8 tired9 eyes10 short11 black12 hair13 soaked14 yellow15 raincoat16 dark17 jacket18. Good 18. Covers age gender face hair clothing color.
+
+Style 8-10 words: "modern rainy Chinese city, cold blue tones, neon reflections, gritty handheld, cinematic 4K." Count modern1 rainy2 Chinese3 city4 cold5 blue6 tones7 neon8 reflections9 gritty10 handheld11 cinematic12 4K13. Too many. Need 8-10: "modern rainy city, cold blue tones, neon reflections, gritty handheld, cinematic." Count modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 handheld10 cinematic11. 11. Remove cinematic: "modern rainy city, cold blue tones, neon reflections, gritty handheld, 4K." Count modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 handheld10 4K11. Need 10. "modern rainy city, cold blue tones, neon reflections, gritty handheld, 4K" still 11? Let's count: modern(1) rainy(2) city(3) cold(4) blue(5) tones(6) neon(7) reflections(8) gritty(9) handheld(10) 4K(11). Need 8-10. "modern rainy city, cold blue tones, neon reflections, gritty handheld" = 10? modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 handheld10. Good. Covers era scene, color, light? neon reflections, gritty handheld, but no quality. Maybe "modern rainy city, cold blue tones, neon reflections, gritty handheld, sharp" = 11? modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 handheld10 sharp11. Need 10. "modern rainy city, cold blue tones, neon reflections, gritty, sharp" = 10? modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 sharp10. Good but no handheld. Could be okay. Need global style 8-10 words. Use "modern rainy city, cold blue tones, neon reflections, gritty, sharp". 10.
+
+Beats 17. Need each brief 30-40 words. Need scene names <=12 Chinese chars. Need story arc. Let's outline 17 scenes:
+1 暴雨接单 (hook)
+2 城中村老宅
+3 哥哥开门
+4 血盒秘密
+5 追债逼近
+6 楼下病女
+7 药箱真相
+8 旧日恩怨
+9 黑衣人破门
+10 雨巷逃亡
+11 医院对峙
+12 哥哥身份
+13 债务陷阱
+14 妹妹求救
+15 雨夜反杀
+16 真相揭晓
+17 黎明抉择
+
+Need 17 exactly. Each brief 30-40 words. Need count. Let's craft each with 30-40 words. Need English. Need include what happens, protagonist state/action, location, camera focus. Need maybe 35 words each. Let's count carefully. We can make 35 words. Need no Chinese in brief? English. Scene Chinese.
+
+Let's draft and count.
+
+1 scene "暴雨接单" (4). brief: "Chen Mo pedals through torrential rain, phone flashing urgent delivery. Close-up on soaked face, wide alley, handheld shake, neon reflections, he grips handlebars, breath ragged, determined to reach old village house before deadline." Count: Chen1 Mo2 pedals3 through4 torrential5 rain6 phone7 flashing8 urgent9 delivery10 Close-up11 on12 soaked13 face14 wide15 alley16 handheld17 shake18 neon19 reflections20 he21 grips22 handlebars23 breath24 ragged25 determined26 to27 reach28 old29 village30 house31 before32 deadline33. 33. Good.
+
+2 "城中村老宅" brief: "He climbs narrow stairs to a dim old house, rain hammering windows. Medium tracking shot follows his dripping bike, close-up on rusted door, he knocks, waits, hears faint cough from downstairs, tension rising." Count He1 climbs2 narrow3 stairs4 to5 a6 dim7 old8 house9 rain10 hammering11 windows12 Medium13 tracking14 shot15 follows16 his17 dripping18 bike19 close-up20 on21 rusted22 door23 he24 knocks25 waits26 hears27 faint28 cough29 from30 downstairs31 tension32 rising33. Good.
+
+3 "哥哥开门" brief: "Door creaks open, revealing Chen Ying, missing for ten years, pale and wounded. Extreme close-up on his scarred hand, slow push-in, Chen Mo freezes, rain drips between them, recognition and fear collide." Count Door1 creaks2 open3 revealing4 Chen5 Ying6 missing7 for8 ten9 years10 pale11 and12 wounded13 Extreme14 close-up15 on16 his17 scarred18 hand19 slow20 push-in21 Chen22 Mo23 freezes24 rain25 drips26 between27 them28 recognition29 and30 fear31 collide32. 32.
+
+4 "血盒秘密" brief: "Inside, Chen Ying presses a blood-stained box into Chen Mo's hands. Close-up on trembling fingers, low-angle shot, he whispers the medicine is for a dying girl downstairs, his eyes desperate, shadows flicker." Count Inside1 Chen2 Ying3 presses4 a5 blood-stained6 box7 into8 Chen9 Mo's10 hands11 Close-up12 on13 trembling14 fingers15 low-angle16 shot17 he18 whispers19 the20 medicine21 is22 for23 a24 dying25 girl26 downstairs27 his28 eyes29 desperate30 shadows31 flicker32. 32.
+
+5 "追债逼近" brief: "Heavy boots pound the alley below. Wide shot from window, silhouettes in black approach, Chen Mo checks phone, no signal. Close-up on clenched jaw, he grabs box, brother warns them are coming for debt." Count Heavy1 boots2 pound3 the4 alley5 below6 Wide7 shot8 from9 window10 silhouettes11 in12 black13 approach14 Chen15 Mo16 checks17 phone18 no19 signal20 Close-up21 on22 clenched23 jaw24 he25 grabs26 box27 brother28 warns29 them30 are31 coming32 for33 debt34. 34.
+
+6 "楼下病女" brief: "They descend to a cramped room where a sick girl lies breathing weakly. Handheld close-up on her thin fingers, Chen Mo kneels, opens box, finds vials, brother explains one dose can save her, time is running out." Count They1 descend2 to3 a4 cramped5 room6 where7 a8 sick9 girl10 lies11 breathing12 weakly13 Handheld14 close-up15 on16 her17 thin18 fingers19 Chen20 Mo21 kneels22 opens23 box24 finds25 vials26 brother27 explains28 one29 dose30 can31 save32 her33 time34 is35 running36 out37. 37.
+
+7 "药箱真相" brief: "Chen Mo discovers the box contains not only medicine but a USB drive and old photos. Close-up on photo of his brother with a woman, he asks why he vanished, Chen Ying's face hardens, rain intensifies outside." Count Chen1 Mo2 discovers3 the4 box5 contains6 not7 only8 medicine9 but10 a11 USB12 drive13 and14 old15 photos16 Close-up17 on18 photo19 of20 his21 brother22 with23 a24 woman25 he26 asks27 why28 he29 vanished30 Chen31 Ying's32 face33 hardens34 rain35 intensifies36 outside37. 37.
+
+8 "旧日恩怨" brief: "Flashback cuts: young brothers in a bright clinic, then a loan shark's office. Quick montage, close-ups on contracts, a woman's tearful plea, Chen Ying signing. Back to present, guilt and anger surface in Chen Mo's eyes." Count Flashback1 cuts2 young3 brothers4 in5 a6 bright7 clinic8 then9 a10 loan11 shark's12 office13 Quick14 montage15 close-ups16 on17 contracts18 a19 woman's20 tearful21 plea22 Chen23 Ying24 signing25 Back26 to27 present28 guilt29 and30 anger31 surface32 in33 Chen34 Mo's35 eyes36. 36.
+
+9 "黑衣人破门" brief: "Black-clad men smash the door. Wide low-angle shot, splinters fly, Chen Mo shields the girl, brother grabs a pipe. Close-up on gun barrel, rain pours through broken door, they retreat into the dark hallway." Count Black-clad1 men2 smash3 the4 door5 Wide6 low-angle7 shot8 splinters9 fly10 Chen11 Mo12 shields13 the14 girl15 brother16 grabs17 a18 pipe19 Close-up20 on21 gun22 barrel23 rain24 pours25 through26 broken27 door28 they29 retreat30 into31 the32 dark33 hallway34. 34.
+
+10 "雨巷逃亡" brief: "Chen Mo carries the box through flooded alleys, brother limping beside him. Tracking handheld, rain blurs neon, he dodges cars, hears sirens. Close-up on slipping shoes, he looks back, black figures closing in." Count Chen1 Mo2 carries3 the4 box5 through6 flooded7 alleys8 brother9 limping10 beside11 him12 Tracking13 handheld14 rain15 blurs16 neon17 he18 dodges19 cars20 hears21 sirens22 Close-up23 on24 slipping25 shoes26 he27 looks28 back29 black30 figures31 closing32 in33. 33.
+
+11 "医院对峙" brief: "They burst into a hospital corridor, nurses scatter. Wide shot, Chen Mo demands the girl's room, black men block exit. Close-up on his soaked delivery jacket, brother reveals the debt belongs to the hospital owner." Count They1 burst2 into3 a4 hospital5 corridor6 nurses7 scatter8 Wide9 shot10 Chen11 Mo12 demands13 the14 girl's15 room16 black17 men18 block19 exit20 Close-up21 on22 his23 soaked24 delivery25 jacket26 brother27 reveals28 the29 debt30 belongs31 to32 the33 hospital34 owner35. 35.
+
+12 "哥哥身份" brief: "In a sterile room, Chen Ying removes his shirt, revealing scars and a hospital employee tattoo. Close-up on tattoo, Chen Mo realizes his brother was once a doctor, now a fugitive, his voice cracks with old pain." Count In1 a2 sterile3 room4 Chen5 Ying6 removes7 his8 shirt9 revealing10 scars11 and12 a13 hospital14 employee15 tattoo16 Close-up17 on18 tattoo19 Chen20 Mo21 realizes22 his23 brother24 was25 once26 a27 doctor28 now29 a30 fugitive31 his32 voice33 cracks34 with35 old36 pain37. 37.
+
+13 "债务陷阱" brief: "The hospital owner appears, smiling, holding a contract. Medium two-shot, he says the medicine is counterfeit, the girl is bait. Close-up on Chen Mo's face, he sees the vial label, doubt floods him, brother steps forward protectively." Count The1 hospital2 owner3 appears4 smiling5 holding6 a7 contract8 Medium9 two-shot10 he11 says12 the13 medicine14 is15 counterfeit16 the17 girl18 is19 bait20 Close-up21 on22 Chen23 Mo's24 face25 he26 sees27 the28 vial29 label30 doubt31 floods32 him33 brother34 steps35 forward36 protectively37. 37.
+
+14 "妹妹求救" brief: "The sick girl's monitor beeps faster. Close-up on her pale lips, she whispers her name, Chen Mo's younger sister. Handheld shake, he drops the box, brother catches it, black men advance, rain streaks the window." Count The1 sick2 girl's3 monitor4 beeps5 faster6 Close-up7 on8 her9 pale10 lips11 she12 whispers13 her14 name15 Chen16 Mo's17 younger18 sister19 Handheld20 shake21 he22 drops23 the24 box25 brother26 catches27 it28 black29 men30 advance31 rain32 streaks33 the34 window35. 35.
+
+15 "雨夜反杀" brief: "Chen Mo uses a hospital gurney to block the men, brother fights with a fire extinguisher. Dynamic handheld, sparks, rain, close-up on broken gun, they push the owner against glass, the box stays in Chen Mo's hands." Count Chen1 Mo2 uses3 a4 hospital5 gurney6 to7 block8 the9 men10 brother11 fights12 with13 a14 fire15 extinguisher16 Dynamic17 handheld18 sparks19 rain20 close-up21 on22 broken23 gun24 they25 push26 the27 owner28 against29 glass30 the31 box32 stays33 in34 Chen35 Mo's36 hands37. 37.
+
+16 "真相揭晓" brief: "The USB reveals the owner forged debts to seize the clinic. Close-up on screen, Chen Mo watches his brother's sacrifice, the girl's real medicine was hidden all along. Slow push-in, he finally understands why Chen Ying disappeared." Count The1 USB2 reveals3 the4 owner5 forged6 debts7 to8 seize9 the10 clinic11 Close-up12 on13 screen14 Chen15 Mo16 watches17 his18 brother's19 sacrifice20 the21 girl's22 real23 medicine24 was25 hidden26 all27 along28 Slow29 push-in30 he31 finally32 understands33 why34 Chen35 Ying36 disappeared37. 37.
+
+17 "黎明抉择" brief: "Dawn breaks over the city. Wide shot, Chen Mo gives the medicine to his sister, brother collapses, police arrive. Close-up on their hands, he chooses to turn himself in, rain stops, neon fades, hope remains." Count Dawn1 breaks2 over3 the4 city5 Wide6 shot7 Chen8 Mo9 gives10 the11 medicine12 to13 his14 sister15 brother16 collapses17 police18 arrive19 Close-up20 on21 their22 hands23 he24 chooses25 to26 turn27 himself28 in29 rain30 stops31 neon32 fades33 hope34 remains35. 35.
+
+Need ensure each brief 30-40. All 32-37. Good. Need scene names <=12 Chinese chars. All short. Need JSON valid. Need no code block. Need first line { last }. Need maybe title. Character 18 words. Style 10. Need ensure no extra text. Need maybe "character" includes protagonist only. Good.
+
+Double-check word counts with hyphenated words? Usually hyphenated counts as one? We counted as one. Need if "Close-up" one. Good. "low-angle" one. "two-shot" one. "push-in" one. "blood-stained" one. "rain-streaked" not used. "black-clad" one. "handheld" one. "4K" not used. Style: "modern rainy city, cold blue tones, neon reflections, gritty, sharp" count 10. Good.
+
+Need maybe target 75 shots: 17 scenes 4-5 shots. We don't need list shots. Beats enough.
+
+Potential issue: user says "只输出 JSON，第一行以 { 开头，最后一行以 } 结尾，不要任何其他文字、解释或代码块。" So output raw JSON. Need ensure no trailing commas. Need escape quotes? None.
+
+Need maybe title in Chinese? Could be "雨夜快递". Fine.
+
+Need ensure character prompt 15-20 words. Let's recount: "Chen Mo, 28, East Asian male, angular face, tired eyes, short black hair, soaked yellow raincoat, dark jacket."
+Words: Chen(1) Mo,(2) 28,(3) East(4) Asian(5) male,(6) angular(7) face,(8) tired(9) eyes,(10) short(11) black(12) hair,(13) soaked(14) yellow(15) raincoat,(16) dark(17) jacket.(18). Good.
+
+Style: "modern rainy city, cold blue tones, neon reflections, gritty, sharp" Words: modern1 rainy2 city3 cold4 blue5 tones6 neon7 reflections8 gritty9 sharp10. Good.
+
+Need maybe "style" includes era scene, color, light, quality. It has modern, rainy city, cold blue tones, neon reflections, gritty, sharp. Good.
+
+Need beats briefs maybe 30-40 words. Let's verify each with punctuation not matter. Need maybe "Chen Mo's" counts as one? Usually word count by spaces, yes. We counted as one. If tokenization maybe apostrophe? But likely okay. Need ensure no brief under 30. Let's recount all carefully with spaces.
+
+1: "Chen Mo pedals through torrential rain, phone flashing urgent delivery. Close-up on soaked face, wide alley, handheld shake, neon reflections, he grips handlebars, breath ragged, determined to reach old village house before deadline."
+Split: Chen(1) Mo(2) pedals(3) through(4) torrential(5) rain,(6) phone(7) flashing(8) urgent(9) delivery.(10) Close-up(11) on(12) soaked(13) face,(14) wide(15) alley,(16) handheld(17) shake,(18) neon(19) reflections,(20) he(21) grips(22) handlebars,(23) breath(24) ragged,(25) determined(26) to(27) reach(28) old(29) village(30) house(31) before(32) deadline.(33). Good.
+
+2: "He climbs narrow stairs to a dim old house, rain hammering windows. Medium tracking shot follows his dripping bike, close-up on rusted door, he knocks, waits, hears faint cough from downstairs, tension rising."
+He1 climbs2 narrow3 stairs4 to5 a6 dim7 old8 house,9 rain10 hammering11 windows.12 Medium13 tracking14 shot15 follows16 his17 dripping18 bike,19 close-up20 on21 rusted22 door,23 he24 knocks,25 waits,26 hears27 faint28 cough29 from30 downstairs,31 tension32 rising.33. Good.
+
+3: "Door creaks open, revealing Chen Ying, missing for ten years, pale and wounded. Extreme close-up on his scarred hand, slow push-in, Chen Mo freezes, rain drips between them, recognition and fear collide."
+Door1 creaks2 open,3 revealing4 Chen5 Ying,6 missing7 for8 ten9 years,10 pale11 and12 wounded.13 Extreme14 close-up15 on16 his17 scarred18 hand,19 slow20 push-in,21 Chen22 Mo23 freezes,24 rain25 drips26 between27 them,28 recognition29 and30 fear31 collide.32. Good.
+
+4: "Inside, Chen Ying presses a blood-stained box into Chen Mo's hands. Close-up on trembling fingers, low-angle shot, he whispers the medicine is for a dying girl downstairs, his eyes desperate, shadows flicker."
+Inside,1 Chen2 Ying3 presses4 a5 blood-stained6 box7 into8 Chen9 Mo's10 hands.11 Close-up12 on13 trembling14 fingers,15 low-angle16 shot,17 he18 whispers19 the20 medicine21 is22 for23 a24 dying25 girl26 downstairs,27 his28 eyes29 desperate,30 shadows31 flicker.32. Good.
+
+5: "Heavy boots pound the alley below. Wide shot from window, silhouettes in black approach, Chen Mo checks phone, no signal. Close-up on clenched jaw, he grabs box, brother warns them are coming for debt."
+Heavy1 boots2 pound3 the4 alley5 below.6 Wide7 shot8 from9 window,10 silhouettes11 in12 black13 approach,14 Chen15 Mo16 checks17 phone,18 no19 signal.20 Close-up21 on22 clenched23 jaw,24 he25 grabs26 box,27 brother28 warns29 them30 are31 coming32 for33 debt.34. Good.
+
+6: "They descend to a cramped room where a sick girl lies breathing weakly. Handheld close-up on her thin fingers, Chen Mo kneels, opens box, finds vials, brother explains one dose can save her, time is running out."
+They1 descend2 to3 a4 cramped5 room6 where7 a8 sick9 girl10 lies11 breathing12 weakly.13 Handheld14 close-up15 on16 her17 thin18 fingers,19 Chen20 Mo21 kneels,22 opens23 box,24 finds25 vials,26 brother27 explains28 one29 dose30 can31 save32 her,33 time34 is35 running36 out.37. Good.
+
+7: "Chen Mo discovers the box contains not only medicine but a USB drive and old photos. Close-up on photo of his brother with a woman, he asks why he vanished, Chen Ying's face hardens, rain intensifies outside."
+Chen1 Mo2 discovers3 the4 box5 contains6 not7 only8 medicine9 but10 a11 USB12 drive13 and14 old15 photos.16 Close-up17 on18 photo19 of20 his21 brother22 with23 a24 woman,25 he26 asks27 why28 he29 vanished,30 Chen31 Ying's32 face33 hardens,34 rain35 intensifies36 outside.37. Good.
+
+8: "Flashback cuts: young brothers in a bright clinic, then a loan shark's office. Quick montage, close-ups on contracts, a woman's tearful plea, Chen Ying signing. Back to present, guilt and anger surface in Chen Mo's eyes."
+Flashback1 cuts:2 young3 brothers4 in5 a6 bright7 clinic,8 then9 a10 loan11 shark's12 office.13 Quick14 montage,15 close-ups16 on17 contracts,18 a19 woman's20 tearful21 plea,22 Chen23 Ying24 signing.25 Back26 to27 present,28 guilt29 and30 anger31 surface32 in33 Chen34 Mo's35 eyes.36. Good.
+
+9: "Black-clad men smash the door. Wide low-angle shot, splinters fly, Chen Mo shields the girl, brother grabs a pipe. Close-up on gun barrel, rain pours through broken door, they retreat into the dark hallway."
+Black-clad1 men2 smash3 the4 door.5 Wide6 low-angle7 shot,8 splinters9 fly,10 Chen11 Mo12 shields13 the14 girl,15 brother16 grabs17 a18 pipe.19 Close-up20 on21 gun22 barrel,23 rain24 pours25 through26 broken27 door,28 they29 retreat30 into31 the32 dark33 hallway.34. Good.
+
+10: "Chen Mo carries the box through flooded alleys, brother limping beside him. Tracking handheld, rain blurs neon, he dodges cars, hears sirens. Close-up on slipping shoes, he looks back, black figures closing in."
+Chen1 Mo2 carries3 the4 box5 through6 flooded7 alleys,8 brother9 limping10 beside11 him.12 Tracking13 handheld,14 rain15 blurs16 neon,17 he18 dodges19 cars,20 hears21 sirens.22 Close-up23 on24 slipping25 shoes,26 he27 looks28 back,29 black30 figures31 closing32 in.33. Good.
+
+11: "They burst into a hospital corridor, nurses scatter. Wide shot, Chen Mo demands the girl's room, black men block exit. Close-up on his soaked delivery jacket, brother reveals the debt belongs to the hospital owner."
+They1 burst2 into3 a4 hospital5 corridor,6 nurses7 scatter.8 Wide9 shot,10 Chen11 Mo12 demands13 the14 girl's15 room,16 black17 men18 block19 exit.20 Close-up21 on22 his23 soaked24 delivery25 jacket,26 brother27 reveals28 the29 debt30 belongs31 to32 the33 hospital34 owner.35. Good.
+
+12: "In a sterile room, Chen Ying removes his shirt, revealing scars and a hospital employee tattoo. Close-up on tattoo, Chen Mo realizes his brother was once a doctor, now a fugitive, his voice cracks with old pain."
+In1 a2 sterile3 room,4 Chen5 Ying6 removes7 his8 shirt,9 revealing10 scars11 and12 a13 hospital14 employee15 tattoo.16 Close-up17 on18 tattoo,19 Chen20 Mo21 realizes22 his23 brother24 was25 once26 a27 doctor,28 now29 a30 fugitive,31 his32 voice33 cracks34 with35 old36 pain.37. Good.
+
+13: "The hospital owner appears, smiling, holding a contract. Medium two-shot, he says the medicine is counterfeit, the girl is bait. Close-up on Chen Mo's face, he sees the vial label, doubt floods him, brother steps forward protectively."
+The1 hospital2 owner3 appears,4 smiling,5 holding6 a7 contract.8 Medium9 two-shot,10 he11 says12 the13 medicine14 is15 counterfeit,16 the17 girl18 is19 bait.20 Close-up21 on22 Chen23 Mo's24 face,25 he26 sees27 the28 vial29 label,30 doubt31 floods32 him,33 brother34 steps35 forward36 protectively.37. Good.
+
+14: "The sick girl's monitor beeps faster. Close-up on her pale lips, she whispers her name, Chen Mo's younger sister. Handheld shake, he drops the box, brother catches it, black men advance, rain streaks the window."
+The1 sick2 girl's3 monitor4 beeps5 faster.6 Close-up7 on8 her9 pale10 lips,11 she12 whispers13 her14 name,15 Chen16 Mo's17 younger18 sister.19 Handheld20 shake,21 he22 drops23 the24 box,25 brother26 catches27 it,28 black29 men30 advance,31 rain32 streaks33 the34 window.35. Good.
+
+15: "Chen Mo uses a hospital gurney to block the men, brother fights with a fire extinguisher. Dynamic handheld, sparks, rain, close-up on broken gun, they push the owner against glass, the box stays in Chen Mo's hands."
+Chen1 Mo2 uses3 a4 hospital5 gurney6 to7 block8 the9 men,10 brother11 fights12 with13 a14 fire15 extinguisher.16 Dynamic17 handheld,18 sparks,19 rain,20 close-up21 on22 broken23 gun,24 they25 push26 the27 owner28 against29 glass,30 the31 box32 stays33 in34 Chen35 Mo's36 hands.37. Good.
+
+16: "The USB reveals the owner forged debts to seize the clinic. Close-up on screen, Chen Mo watches his brother's sacrifice, the girl's real medicine was hidden all along. Slow push-in, he finally understands why Chen Ying disappeared."
+The1 USB2 reveals3 the4 owner5 forged6 debts7 to8 seize9 the10 clinic.11 Close-up12 on13 screen,14 Chen15 Mo16 watches17 his18 brother's19 sacrifice,20 the21 girl's22 real23 medicine24 was25 hidden26 all27 along.28 Slow29 push-in,30 he31 finally32 understands33 why34 Chen35 Ying36 disappeared.37. Good.
+
+17: "Dawn breaks over the city. Wide shot, Chen Mo gives the medicine to his sister, brother collapses, police arrive. Close-up on their hands, he chooses to turn himself in, rain stops, neon fades, hope remains."
+Dawn1 breaks2 over3 the4 city.5 Wide6 shot,7 Chen8 Mo9 gives10 the11 medicine12 to13 his14 sister,15 brother16 collapses,17 police18 arrive.19 Close-up20 on21 their22 hands,23 he24 chooses25 to26 turn27 himself28 in,29 rain30 stops,31 neon32 fades,33 hope34 remains.35. Good.
+
+Need maybe "beats" array length 17. Yes.
+
+Need maybe scene names: 
+1 暴雨接单 (4)
+2 城中村老宅 (5)
+3 哥哥开门 (4)
+4 血盒秘密 (4)
+5 追债逼近 (4)
+6 楼下病女 (4)
+7 药箱真相 (4)
+8 旧日恩怨 (4)
+9 黑衣人破门 (5)
+10 雨巷逃亡 (4)
+11 医院对峙 (4)
+12 哥哥身份 (4)
+13 债务陷阱 (4)
+14 妹妹求救 (4)
+15 雨夜反杀 (4)
+16 真相揭晓 (4)
+17 黎明抉择 (4)
+All <=12.
+
+Need maybe story: opening hook, conflict, turn, climax, ending. Good.
+
+Need ensure JSON strings no unescaped newline? We can output pretty JSON with newlines. First line {, last }. That's okay. Need no code fences. Need maybe ensure valid JSON: keys quoted, strings quoted, commas. No trailing comma.
+
+Potential issue: "character" prompt 15-20 words, but includes comma after Mo? Word count by spaces okay. Could be 18. Good.
+
+Potential issue: "style" 8-10 words, we have 10. Good.
+
+Potential issue: briefs 30-40 words. We counted by spaces. If hyphenated words count as one, okay. If "Close-up" maybe two? Usually word count might treat hyphen as one. If they count punctuation separated? Could be risky. But likely okay. Need maybe avoid hyphenated to be safe? But camera terms often hyphen. If counted as two, some briefs may exceed 40? Let's see if hyphenated counted as two: each hyphen adds one. Brief 1 has Close-up (2) -> 34. Still <=40. Brief 2 close-up ->34. Brief 3 Extreme close-up, push-in -> 34? 32 +2 =34. Brief 4 blood-stained, Close-up, low-angle -> 35. Brief 5 Close-up ->35. Brief 6 Handheld close-up ->38. Brief 7 Close-up ->38. Brief 8 close-ups? maybe close-ups one? If hyphen? no. Brief 9 Black-clad, low-angle, Close-up ->37. Brief 10 Close-up ->34. Brief 11 Close-up ->36. Brief 12 Close-up ->38. Brief 13 two-shot, Close-up ->39. Brief 14 Close-up ->36. Brief 15 close-up ->38. Brief 16 Close-up, push-in ->39. Brief 17 Close-up ->36. All still <=40 if hyphen counted as two? Need check 13: 37 + two-shot (2) + Close-up (2) =39? Original 37 with two-shot one and Close-up one. If both two, +2 =39. Good. 16: 37 + Close-up + push-in =39. Good. So safe.
+
+Need maybe "character" if hyphen? none. style none.
+
+Need maybe "title" can be Chinese. Good.
+
+Need maybe no extra spaces? Fine.
+
+Let's produce final JSON. Ensure no BOM. final only.
+</think>
+
+{
+  "title": "雨夜快递",
+  "character": "Chen Mo, 28, East Asian male, angular face, tired eyes, short black hair, soaked yellow raincoat, dark jacket.",
+  "style": "modern rainy city, cold blue tones, neon reflections, gritty, sharp",
+  "beats": [
+    {
+      "scene": "暴雨接单",
+      "brief": "Chen Mo pedals through torrential rain, phone flashing urgent delivery. Close-up on soaked face, wide alley, handheld shake, neon reflections, he grips handlebars, breath ragged, determined to reach old village house before deadline."
+    },
+    {
+      "scene": "城中村老宅",
+      "brief": "He climbs narrow stairs to a dim old house, rain hammering windows. Medium tracking shot follows his dripping bike, close-up on rusted door, he knocks, waits, hears faint cough from downstairs, tension rising."
+    },
+    {
+      "scene": "哥哥开门",
+      "brief": "Door creaks open, revealing Chen Ying, missing for ten years, pale and wounded. Extreme close-up on his scarred hand, slow push-in, Chen Mo freezes, rain drips between them, recognition and fear collide."
+    },
+    {
+      "scene": "血盒秘密",
+      "brief": "Inside, Chen Ying presses a blood-stained box into Chen Mo's hands. Close-up on trembling fingers, low-angle shot, he whispers the medicine is for a dying girl downstairs, his eyes desperate, shadows flicker."
+    },
+    {
+      "scene": "追债逼近",
+      "brief": "Heavy boots pound the alley below. Wide shot from window, silhouettes in black approach, Chen Mo checks phone, no signal. Close-up on clenched jaw, he grabs box, brother warns them are coming for debt."
+    },
+    {
+      "scene": "楼下病女",
+      "brief": "They descend to a cramped room where a sick girl lies breathing weakly. Handheld close-up on her thin fingers, Chen Mo kneels, opens box, finds vials, brother explains one dose can save her, time is running out."
+    },
+    {
+      "scene": "药箱真相",
+      "brief": "Chen Mo discovers the box contains not only medicine but a USB drive and old photos. Close-up on photo of his brother with a woman, he asks why he vanished, Chen Ying's face hardens, rain intensifies outside."
+    },
+    {
+      "scene": "旧日恩怨",
+      "brief": "Flashback cuts: young brothers in a bright clinic, then a loan shark's office. Quick montage, close-ups on contracts, a woman's tearful plea, Chen Ying signing. Back to present, guilt and anger surface in Chen Mo's eyes."
+    },
+    {
+      "scene": "黑衣人破门",
+      "brief": "Black-clad men smash the door. Wide low-angle shot, splinters fly, Chen Mo shields the girl, brother grabs a pipe. Close-up on gun barrel, rain pours through broken door, they retreat into the dark hallway."
+    },
+    {
+      "scene": "雨巷逃亡",
+      "brief": "Chen Mo carries the box through flooded alleys, brother limping beside him. Tracking handheld, rain blurs neon, he dodges cars, hears sirens. Close-up on slipping shoes, he looks back, black figures closing in."
+    },
+    {
+      "scene": "医院对峙",
+      "brief": "They burst into a hospital corridor, nurses scatter. Wide shot, Chen Mo demands the girl's room, black men block exit. Close-up on his soaked delivery jacket, brother reveals the debt belongs to the hospital owner."
+    },
+    {
+      "scene": "哥哥身份",
+      "brief": "In a sterile room, Chen Ying removes his shirt, revealing scars and a hospital employee tattoo. Close-up on tattoo, Chen Mo realizes his brother was once a doctor, now a fugitive, his voice cracks with old pain."
+    },
+    {
+      "scene": "债务陷阱",
+      "brief": "The hospital owner appears, smiling, holding a contract. Medium two-shot, he says the medicine is counterfeit, the girl is bait. Close-up on Chen Mo's face, he sees the vial label, doubt floods him, brother steps forward protectively."
+    },
+    {
+      "scene": "妹妹求救",
+      "brief": "The sick girl's monitor beeps faster. Close-up on her pale lips, she whispers her name, Chen Mo's younger sister. Handheld shake, he drops the box, brother catches it, black men advance, rain streaks the window."
+    },
+    {
+      "scene": "雨夜反杀",
+      "brief": "Chen Mo uses a hospital gurney to block the men, brother fights with a fire extinguisher. Dynamic handheld, sparks, rain, close-up on broken gun, they push the owner against glass, the box stays in Chen Mo's hands."
+    },
+    {
+      "scene": "真相揭晓",
+      "brief": "The USB reveals the owner forged debts to seize the clinic. Close-up on screen, Chen Mo watches his brother's sacrifice, the girl's real medicine was hidden all along. Slow push-in, he finally understands why Chen Ying disappeared."
+    },
+    {
+      "scene": "黎明抉择",
+      "brief": "Dawn breaks over the city. Wide shot, Chen Mo gives the medicine to his sister, brother collapses, police arrive. Close-up on their hands, he chooses to turn himself in, rain stops, neon fades, hope remains."
+    }
+  ]
+}
