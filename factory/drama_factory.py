@@ -1009,15 +1009,6 @@ class DramaFactory:
                 shutil.copy2(out, latest)
             except Exception as e:
                 self.log(f"  [warn] 无法写 final_drama.mp4：{e}")
-        # 成功成片：未激活状态下扣除一次免费试用
-        if not getattr(self.args, "no_license_check", False):
-            try:
-                from factory import activation
-                rem = activation.consume_trial()
-                if rem is not None and rem >= 0:
-                    self.log(f"  已计入免费试用，剩余 {rem} 次（输入激活码可无限使用）")
-            except Exception:
-                pass
         return out
 
 
@@ -1057,8 +1048,6 @@ def main(argv=None):
                     help="AI 审核时附加的用户修改要求（与 --review 搭配；交互模式可随时输入）")
     ap.add_argument("--yes", action="store_true",
                     help="跳过剧本预览交互确认，直接生成（批处理/无人值守）")
-    ap.add_argument("--no-license-check", action="store_true",
-                    help="跳过激活/试用检查（仅供内部调试，勿用于分发版本）")
     ap.add_argument("--minimax-template", default=None,
                     choices=["six_section", "director", "dyt"],
                     help="把逐镜头提示词改写为 MiniMax-H3 六段式/导演台模板（six_section=每镜头六段式；director=六段式+跨幕无硬切衔接，增强连贯性与一致性）")
@@ -1109,15 +1098,6 @@ def main(argv=None):
     story = args.story or args.story_opt
     if not story and not args.script_json:
         ap.error("请提供一句话剧情梗概，或 --script-json 指定已有剧本")
-
-    # ---- 激活 / 试用门禁（默认启用；plan-only 规划不门禁）----
-    if not args.no_license_check and not args.plan_only:
-        from factory import activation
-        if not activation.has_trial():
-            raise RuntimeError(
-                "免费试用次数已用完（2/2），且未激活。\n"
-                "请先输入有效激活码激活后继续使用。"
-            )
 
     client = ComfyClient(base_url=args.url)
     h = client.health()

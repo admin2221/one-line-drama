@@ -26,6 +26,10 @@ _guipid.txt
 dist/
 build/
 
+# 本地一键打包输出（build_release.ps1 产物）
+release_os/
+release_os.zip
+
 # 日志与运行记录
 *.log
 probe_*.txt

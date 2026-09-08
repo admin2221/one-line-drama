@@ -1,0 +1,12 @@
+[
+  {
+    "name": "example-openai-compatible",
+    "base_url": "https://your-openai-compatible-endpoint.example.com/v1",
+    "api_key": "<YOUR_API_KEY>",
+    "chat_model": "gpt-4o-mini",
+    "image_model": "",
+    "max_tokens": 8192,
+    "timeout": 240,
+    "default": true
+  }
+]

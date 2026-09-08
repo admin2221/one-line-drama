@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-"""短剧生成器 · 图形界面（tkinter）
-版本 v2：重排布局 + 开机自检 + 2次免费试用 + 激活码机制。
+"""短剧生成器 · 图形界面（tkinter）· 开源版
+版本 v3（开源）：移除激活码/试用门禁，免费无限使用。
 
 功能：
 - 故事/参数分区、日志区、底部状态栏分区清晰
 - 启动时自动检查本机 ComfyUI 是否在线（自检）
-- 未激活：免费试用 2 次（成功成片扣一次）；用完须输入激活码
-- 已激活：无限使用
+- 无使用限制（完全开源，见仓库 README）
 """
 import os
 import re
@@ -50,9 +49,7 @@ from factory import task_state  # 任务状态（意外中断保留 / 继续任�
 
 ENGINE_NAMES = ["drama-cli.exe", "drama-cli-onefile.exe", "drama-cli"]
 DEFAULT_COMFY = "http://127.0.0.1:8188"
-TRIAL_LIMIT = 2
-PURCHASE_URL = "https://www.goofish.com/item?id=1078783056478"
-APP_TITLE = "短剧生成器 · Drama Shorts Generator（v2）"
+APP_TITLE = "短剧生成器 · Drama Shorts Generator（开源版）"
 # NVIDIA FLUX 云端生图默认端点（可在“生图API设置…”中修改，key 存 exe 旁 image_api.json）
 IMGAPI_DEFAULT_ENDPOINT = "https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.2-klein-4b"
 
@@ -319,7 +316,8 @@ class DramaGUI(tk.Tk):
         self.engine_path = find_engine()
         self.comfy_ok = False
 
-        self._load_activation_state()
+        # 开源版：无激活/试用门禁
+        self.activated = True
         self._build_ui()
         self.after(200, self._startup_check)
 
@@ -335,20 +333,6 @@ class DramaGUI(tk.Tk):
         except Exception:
             pass
 
-
-    # ---------------- 激活/试用状态 ----------------
-    def _load_activation_state(self):
-        try:
-            sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-            from factory import activation
-            self.activation = activation
-        except Exception as e:
-            self.activation = None
-        self.activated = bool(self.activation and self._act().is_activated())
-        self.used = int(self._act().used_trials()) if self.activation else 0
-
-    def _act(self):
-        return self.activation if self.activation else _NullActivation()
 
     # ---------------- 界面 ----------------
     def _build_ui(self):
@@ -529,7 +513,7 @@ class DramaGUI(tk.Tk):
         self.chars.pack(side="left", fill="x", expand=True, padx=(0, 6))
         tk.Button(row2, text="浏览…", command=self._pick_chars).pack(side="left")
 
-        # --- 控制按钮 + 激活 ---
+        # --- 控制按钮 ---
         ctrl = tk.Frame(main); ctrl.pack(fill="x", **pad)
         self.btn_start = tk.Button(ctrl, text="开始生成 ▶", command=self._start, width=14,
                                    bg="#2e7d32", fg="white", font=("Microsoft YaHei", 11))
@@ -545,7 +529,7 @@ class DramaGUI(tk.Tk):
                   font=("Microsoft YaHei", 10)).pack(side="left", padx=(0, 8))
         self.trial_lb = tk.Label(ctrl, text="", anchor="e", fg="#c62828", font=("Microsoft YaHei", 9))
         self.trial_lb.pack(side="right")
-        tk.Button(ctrl, text="输入激活码", command=self._ask_activate, width=10).pack(side="right", padx=6)
+
 
         # --- 分区三：日志 ---
         sec3 = tk.LabelFrame(main, text=" 3 · 生成日志 ", font=("Microsoft YaHei", 9, "bold"),
@@ -575,16 +559,8 @@ class DramaGUI(tk.Tk):
             self.btn_start.configure(state="disabled")
 
     def _refresh_trial_label(self):
-        if self.activation and self._act().is_activated():
-            expiry = self._act().activation_expiry()
-            self.trial_lb.config(text=f"✅ 已激活 · {expiry}", fg="#2e7d32")
-            return
-        remaining = TRIAL_LIMIT - self.used
-        if remaining > 0 and self.engine_path:
-            self.trial_lb.config(text=f"免费试用剩余 {remaining}/{TRIAL_LIMIT} 次 · 激活码", fg="#c62828")
-        else:
-            self.trial_lb.config(text="⚠ 试用次数已用完，请输入激活码", fg="#c62828")
-            self.btn_start.configure(state="disabled")
+        # 开源版：始终可用，不显示试用/激活
+        self.trial_lb.config(text="🧡 开源版 · 无限使用", fg="#2e7d32")
 
     # ---------------- 开机自检 ----------------
     def _startup_check(self):
@@ -651,52 +627,6 @@ class DramaGUI(tk.Tk):
         self.log.see("end")
         self.log.configure(state="disabled")
         self.update_idletasks()
-
-    def _ask_activate(self):
-        if not self.activation:
-            messagebox.showerror("错误", "激活组件未加载")
-            return
-        win = tk.Toplevel(self)
-        win.title("激活")
-        win.geometry("480x290")
-        win.resizable(False, False)
-        win.transient(self)
-        win.grab_set()
-
-        body = tk.Frame(win); body.pack(padx=20, pady=16, fill="both", expand=True)
-        tk.Label(body, text="输入激活码解锁无限使用", font=("Microsoft YaHei", 12, "bold"),
-                 fg="#1565c0").pack(pady=(0, 8))
-        tk.Label(body, text="激活码为 XXXX-XXXX-XXXX-XXXX（有效期以激活码为准：1天/1周/1月/1年，自激活之日起算）",
-                 font=("Microsoft YaHei", 9), fg="#555").pack()
-
-        entry = tk.Entry(body, width=30, font=("Consolas", 11), justify="center")
-        entry.pack(pady=12)
-        entry.focus_set()
-
-        msg = tk.Label(body, text="", fg="#c62828", font=("Microsoft YaHei", 9))
-        msg.pack()
-
-        btns = tk.Frame(body); btns.pack(pady=8)
-        tk.Button(btns, text="🚀 购买激活码", command=lambda: open_url(PURCHASE_URL),
-                  bg="#ff9800", fg="white", width=14).pack(side="left", padx=6)
-        tk.Button(btns, text="确认激活", command=lambda: self._do_activate(entry, msg, win),
-                  bg="#2e7d32", fg="white", width=12).pack(side="left", padx=6)
-        tk.Button(btns, text="取消", command=win.destroy, width=8).pack(side="left", padx=6)
-
-    def _do_activate(self, entry, msg, win):
-        code = entry.get().strip()
-        if not code:
-            msg.config(text="请输入激活码")
-            return
-        ok, rmsg = self._act().activate(code)
-        if ok:
-            self.activated = True
-            self._refresh_trial_label()
-            self.status.config(text="✅ 激活成功 · " + self._act().activation_expiry())
-            win.destroy()
-            messagebox.showinfo("激活", f"✅ 激活成功！\n有效期：{self._act().activation_expiry()}")
-        else:
-            msg.config(text=rmsg)
 
     # ---------------- 剧本 LLM 总开关：本地推理 ----------------
     def _llm_local_sw_toggle(self):
@@ -1059,19 +989,6 @@ class DramaGUI(tk.Tk):
             if not messagebox.askyesno("ComfyUI 可能未启动",
                                        "检测到 ComfyUI 可能未启动（127.0.0.1:8188）。\n\n仍要继续吗？"):
                 return
-        # 试用检查
-        if not self.activated:
-            if self.used >= TRIAL_LIMIT:
-                messagebox.showwarning(
-                    "试用已用完",
-                    "免费试用次数已用完（2/2）。\n请购买激活码并激活后继续使用（有效期以激活码为准：1天/1周/1月/1年）。")
-                self._ask_activate()
-                return
-            if not messagebox.askyesno("免费试用",
-                f"本次为【免费试用】第 {self.used + 1}/{TRIAL_LIMIT} 次。\n"
-                "成功生成成片会计入一次试用。仍要继续吗？"):
-                return
-
         # 生图后端预检：选了云端但未配置时先引导（本地模式不受影响）
         _, _iok, _imsg = self._image_api_flags()
         if not _iok:
@@ -1126,7 +1043,6 @@ class DramaGUI(tk.Tk):
 
         self.btn_start.configure(state="disabled")
         self.btn_stop.configure(state="normal")
-        self.this_trial = not self.activated  # 记录本次是否计为试用
         self._append_log("$ " + " ".join(args) + "\n\n")
         self.proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                      text=True, encoding="utf-8", errors="replace")
@@ -1166,26 +1082,15 @@ class DramaGUI(tk.Tk):
         final = os.path.join(self.this_outdir, "final_drama.mp4")
         success = rc == 0 and os.path.isfile(final)
         if success:
-            # 试用扣次由引擎在成功成片时统一处理，此处仅刷新剩余次数显示
-            self.used = int(self._act().used_trials())
             self._append_log(f"\n✅ 完成！成片：{final}\n")
             self._maybe_open_movie(final)
         else:
-            self._append_log(f"\n进程退出码 {rc}（未成功产出成片，不计入试用）\n")
+            self._append_log(f"\n进程退出码 {rc}（未成功产出成片）\n")
             self._append_log("[i] 任务已保留：可点击「继续任务」按钮随时续跑未完成的任务\n")
         self.btn_start.configure(state="normal")
         self.btn_stop.configure(state="disabled")
         self._refresh_trial_label()
         self._refresh_resume_button()
-        if self.used >= TRIAL_LIMIT and not self.activated:
-            # 试用用完：自动弹出激活码对话框 + 购买入口
-            messagebox.showwarning(
-                "免费试用次数已用完",
-                "您已完成 2 部免费试生成。\n\n"
-                "请输入激活码解锁无限使用（有效期以激活码为准：1天/1周/1月/1年，到期需重新购买）。\n"
-                "如需购买激活码，可点击下方“购买”前往官方店铺。")
-            self._ask_activate()
-
     def _maybe_open_movie(self, final):
         try:
             self.movie_st.config(text=f"已生成 {os.path.basename(final)}", fg="#2e7d32")
@@ -1869,18 +1774,6 @@ class DramaGUI(tk.Tk):
         if self.proc and self.proc.poll() is None:
             self.proc.terminate()
         self.destroy()
-
-
-class _NullActivation:
-    """激活组件未加载时的占位。"""
-    def is_activated(self):
-        return False
-    def used_trials(self):
-        return 0
-    def consume_trial(self):
-        return 1
-    def activate(self, code):
-        return False, "组件未加载"
 
 
 if __name__ == "__main__":

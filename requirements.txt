@@ -1,0 +1,29 @@
+# 短剧工厂 · Python 依赖（源码运行 / PyInstaller 打包环境用）
+# 用法：pip install -r requirements.txt
+# 说明：最终用户无需装 Python —— 使用打包好的 drama-gui.exe / drama-cli-onefile.exe 即可。
+
+# —— 核心：ComfyUI HTTP 客户端 ——
+requests>=2.31
+
+# —— 云端剧本推理 / AI 审核（OpenAI 兼容 provider，见 providers.example.json）——
+openai>=1.30
+httpx>=0.27
+
+# —— 可选：TTS 角色配音（edge-tts，需联网调用微软）——
+edge-tts>=6.1
+
+# —— GUI（tkinter 自带）额外可选依赖 ——
+# Pillow 仅在某些图像处理后端需要
+Pillow>=10.0
+
+# —— 安装向导（deploy/drama_setup.py）——
+pywin32>=306; sys_platform == "win32"
+winshell>=0.6; sys_platform == "win32"
+
+# —— 本地 LLM 剧本（可选，巨大）：不装也能跑——
+# 本机 Qwen3.5-9B 等通常通过 ComfyUI-llama-cpp_vlm 节点提供；
+# 只有要在 Python 进程内直接加载 GGUF 时才需要 llama-cpp-python
+# llama-cpp-python  # 见 https://github.com/abetlen/llama-cpp-python
+
+# —— 打包 ——
+# pyinstaller>=6.0

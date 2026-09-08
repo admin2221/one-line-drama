@@ -1,0 +1,50 @@
+# 短剧生成器 · 使用说明（开源版）
+
+## 这是什么
+一句话/一段剧情 → 自动生成完整竖屏短剧（剧本 → 角色定妆 → 逐镜头视频 → 自动拼接成片）。
+本程序为**完全开源版本**：无激活码、无试用限制、免费无限使用。
+源码仓库：https://github.com/admin2221/comfyui （见 README.md）
+
+## 快速开始（GUI）
+双击 `drama-gui.exe`：
+1. 开机自动检测本机 ComfyUI 是否在线（顶部状态栏显示绿字）
+2. 在「1 · 故事梗概」输入一句话或一段剧情（含开局钩子/反转/结局）
+3. 在「2 · 生成参数」设置总时长、剧本 LLM、分辨率、输出目录等
+4. 点击「开始生成 ▶」→ 先生成剧本并弹出【剧本审查】窗口：
+   - ✅ 接受：开始生成画面
+   - 🤖 AI 审核修改：用已配置的自定义提供商自动审核/改进剧本
+   - ✏️ 按要求修改：输入自然语言要求（如“结局要有反转”）
+5. 全部镜头完成后自动拼接，输出 `final_drama.mp4`
+
+## 命令行引擎（高级）
+`drama-cli-onefile.exe`（需与 GUI 放同一目录）：
+```
+drama-cli-onefile.exe "一句话剧情"
+drama-cli-onefile.exe "..." --target-seconds 540 --llm qwen3.5 --megapixels 0.2
+drama-cli-onefile.exe "..." --characters-json characters\role.json --output 输出目录
+drama-cli-onefile.exe "..." --provider-config providers.json --review
+drama-cli-onefile.exe "..." --yes
+```
+常用参数：`--target-seconds 秒`（总时长）、`--llm qwen3.5|qwen3.8|custom`、
+`--megapixels 0.2`（分辨率）、`--steps 16`、`--resume`（断点续跑）、
+`--plan-only`（只规划剧本）、`--provider-config`（云端写剧本）、`--review`（AI 审核剧本）、`--yes`。
+
+## 自定义提供商（可选 · 云端剧本推理）
+不想用本机 LLM 写剧本时，可接入任意 **OpenAI 兼容** 服务（DeepSeek、NVIDIA、硅基流动等）：
+1. GUI「2 · 生成参数」→「提供商设置…」填写名称/API 地址/API Key/模型名
+2. 勾选「使用自定义提供商」后开始生成（仅剧本与 AI 审核走云端；图片/视频仍走本地 ComfyUI）
+3. 配置保存为 exe 同目录 `providers.json`，示例见仓库 `providers.example.json`
+
+## 系统要求
+- 本机需已运行 **ComfyUI**（默认 `http://127.0.0.1:8188`），且已安装所需自定义节点与模型
+  （MiniMax H3 ref2va 视频、Z-Image turbo 定妆、ComfyUI-llama-cpp_vlm 剧本 LLM，具体见仓库 README）
+- 无需安装 Python（exe 自带运行时）
+- 建议 16GB 显存（RTX 4060 Ti 级别）及以上
+
+## 产出目录
+每次生成输出到 `输出目录\<时间戳>\`：
+- `final_drama.mp4` 最新成片；`final_drama_标题_时间戳.mp4` 历史成片
+- `script.json` 完整剧本；`shots\shot_*.mp4` 逐镜头视频
+
+## 自行从源码构建
+见仓库根目录 `build_release.ps1`（PyInstaller 一键打包 GUI + CLI + 安装向导）。
