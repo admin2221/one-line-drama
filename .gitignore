@@ -16,6 +16,7 @@ output/
 tmp.py
 generated_api*.json
 last_prompt_id.txt
+_guipid.txt
 
 # IDE
 .vscode/
