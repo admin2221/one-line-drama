@@ -1,31 +1,89 @@
-# 短剧工厂（Drama Factory）
+<p align="center">
+  <img src="assets/brand/hero-wide.png" alt="Drama Factory · 短剧工厂" width="820">
+</p>
 
-一句话生成一部完整竖屏短剧。仓库整合了两条已验证的 ComfyUI 工作流管线：
+<h1 align="center">Drama Factory · 短剧工厂</h1>
 
-- **图像管线**：LLM（`ComfyUI-llama-cpp_vlm` 视觉概念设计师）提示词增强 → **Z-Image turbo** 文生图（角色定妆，8 步）
-- **视频管线**：**MiniMax H3 ref2va** 多参视频（定妆参考图 `<Picture 1>` + 原生音频，竖屏 9:16）
+<p align="center"><strong>输入一句话，自动生成一部完整竖屏短剧。</strong>（ComfyUI + MiniMax H3）</p>
 
-> ✅ **完全开源版**：无激活码、无试用门禁，MIT 协议，可自由使用/修改/再分发。
-> 官方仓库：<https://github.com/admin2221/comfyui>
+<p align="center">
+  <a href="https://admin2221.github.io/comfyui"><img src="https://img.shields.io/badge/官网-短剧工厂-ffb84d?style=for-the-badge" alt="官网"></a>
+  <a href="https://github.com/admin2221/comfyui/blob/main/README_EN.md"><img src="https://img.shields.io/badge/English-README-4f7cff?style=for-the-badge" alt="English"></a>
+</p>
 
-## 核心流程
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776ab.svg" alt="Python"></a>
+  <a href=""><img src="https://img.shields.io/badge/Platform-Windows-0078d4.svg" alt="Windows"></a>
+</p>
+
+<p align="center">
+  <a href="#showcase">成片演示</a> &nbsp;·&nbsp;
+  <a href="#how-it-works">工作原理</a> &nbsp;·&nbsp;
+  <a href="#quick-start">快速开始</a> &nbsp;·&nbsp;
+  <a href="#windows-installer">Windows 安装包</a> &nbsp;·&nbsp;
+  <a href="docs/安装使用图文教程.html">图文教程</a> &nbsp;·&nbsp;
+  <a href="docs/安装使用图文教程.md">教程(Markdown)</a> &nbsp;·&nbsp;
+  <a href="README_EN.md">README_EN</a>
+</p>
+
+---
+
+把“写故事”和“拍短剧”之间的几百步工作，压缩成一句话：**你输入剧情梗概，软件自动完成剧本导演、角色定妆、逐镜头视频生成与拼接。**
+
+> ✅ **完全开源版**：无激活码、无试用门禁、无水印，MIT 协议，可自由使用/修改/再分发。
+> 历史商业/门禁相关代码与旧安装包已从仓库历史中彻底清除。
+
+---
+
+## 一图看懂
 
 ```
 一句话剧情
-   │  ① LLM 剧本导演（Qwen3.5-9B，或任意 OpenAI 兼容云端 API）→ 角色定妆 + N 个分镜 JSON
+   │  ① LLM 剧本导演（Qwen3.5-9B 本地，或任意 OpenAI 兼容云端 API）
+   │      → 角色设定 + N 个分镜 JSON
    ▼
-   │  ② LLM 视觉概念设计师增强 → Z-Image 生成角色定妆图 → 上传 input
+   │  ② LLM 视觉概念设计师增强 → Z-Image 生成角色定妆图
    ▼
-   │  ③ 逐镜头 MiniMax H3 ref2va 生成视频（共用定妆图 <Picture 1>，原生音频）
+   │  ③ 逐镜头 MiniMax H3 ref2va 生成竖屏视频（共用定妆图，含原生音频）
    ▼
-   │  ④ 全部镜头 ffmpeg 自动拼接 → final_drama.mp4
+   │  ④ ffmpeg 自动拼接 → final_drama.mp4
 ```
 
-- **角色一致性**：全部镜头共用同一张定妆图（`ref_image_0`），主角外观一致
-- **无限时长**：镜头数由剧本决定（`--target-seconds 90` 以上自动分幕扩写），逐镜头循环生成并断点续跑
-- **逐镜头独立提交**：每镜头一个独立 API prompt，跑完释放显存，规避单一大工作流 OOM
+- **角色一致性**：全部镜头共用同一张定妆参考图（`ref_image_0` / 提示词中的 `<Picture 1>`），主角外观全程不漂移
+- **时长不设限**：镜头数由剧本决定（`--target-seconds 90+` 自动分幕扩写），逐镜头循环生成并断点续跑
+- **省显存**：每镜头独立 API prompt、跑完释放显存，规避单一大工作流 OOM（16GB 显存即可工作）
 
-## 快速开始（源码运行）
+---
+
+## 成片演示 <a id="showcase"></a>
+
+以下均为输入一句话剧情后自动产出的**成品片段**（点击封面在新窗口播放 mp4；官网在线播放见 [admin2221.github.io/comfyui](https://admin2221.github.io/comfyui)）：
+
+<table>
+<tr>
+<td align="center" width="33%"><a href="assets/showcase/demo1.mp4"><img src="assets/showcase/demo1-poster.jpg" width="230" alt="示例一 · 古风穿越"></a><br><sub><b>古风穿越</b><br>一句话成片 · 竖屏 9:16</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo2.mp4"><img src="assets/showcase/demo2-poster.jpg" width="230" alt="示例二 · 都市奇缘"></a><br><sub><b>都市奇缘</b><br>角色一致 · 原生音频</sub></td>
+<td align="center" width="33%"><a href="assets/showcase/demo3.mp4"><img src="assets/showcase/demo3-poster.jpg" width="230" alt="示例三 · 悬疑反转"></a><br><sub><b>悬疑反转</b><br>逐镜头成片 · 自动拼接</sub></td>
+</tr>
+</table>
+
+> 三段预览各约 28 秒（480×860，压缩便于在线观看）；完整成片 3~5 分钟，由本机 ComfyUI 逐镜头生成。
+
+---
+
+## 工作原理 <a id="how-it-works"></a>
+
+| 阶段 | 做什么 |
+|---|---|
+| ① 剧本导演 | LLM 把一句话扩写成角色设定 + 分镜剧本 JSON（含每个镜头的画面与台词），可预览/审查、可由 AI 按你的要求修改 |
+| ② 角色定妆 | 视觉概念设计师增强提示词 → Z-Image turbo 生成角色定妆图并上传 ComfyUI input |
+| ③ 镜头生成 | 每个镜头用 MiniMax H3 ref2va 独立生成（共用定妆参考图，自带原生音频） |
+| ④ 拼接 | 全部镜头按剧本顺序 ffmpeg 拼接 → `final_drama.mp4` |
+
+---
+
+## 快速开始（源码运行） <a id="quick-start"></a>
 
 运行前提：**本机已启动 ComfyUI**（默认 `http://127.0.0.1:8188`），并装好依赖自定义节点与模型
 （MiniMax H3 ref2va、Z-Image turbo、ComfyUI-llama-cpp_vlm；建议 16GB 显存起步）。
@@ -50,22 +108,18 @@ python gui\drama_gui.py
 
 > `providers.json`（可能含真实 API Key）不在仓库内，请复制 `providers.example.json` 自行填写。
 
-## 常用参数
+### 常用参数
 
 | 参数 | 默认 | 说明 |
 |------|------|------|
 | `--url` | `http://127.0.0.1:8188` | ComfyUI 地址 |
 | `--llm` | `qwen3.5` | 剧本 LLM：`qwen3.5/qwen3.8/qwen3.8ag/custom`（`custom` 走自定义提供商） |
-| `--provider-config` | 自动发现 | OpenAI 兼容提供商配置 JSON（GUI 设置或见 `providers.example.json`） |
 | `--steps` | `16` | H3 采样步数（越高越精细、越慢） |
 | `--megapixels` | `0.4` | H3 分辨率（0.4 ≈ 竖屏 480×864） |
-| `--aspect` | `9:16 (Portrait Widescreen)` | 画面比例 |
-| `--width` / `--height` | — | 强制分辨率（覆盖比例计算） |
-| `--no-enhance` | 关 | 跳过定妆图 LLM 增强 |
+| `--aspect` | `9:16 (Portrait)` | 画面比例 |
 | `--resume` | 关 | 断点续跑 |
 | `--reencode` | 关 | 拼接时强制重编码 |
 | `--script-json` | — | 复用已有剧本，跳过 LLM |
-| `--characters-json` | — | 预置角色 JSON（LLM 只使用不生成） |
 | `--target-seconds` | — | 目标总时长（秒），≥90s 自动分幕扩写（如 180 → 约 45 镜头） |
 | `--review` | 关 | 剧本生成后用 AI 自动审核/修改一次（需 provider） |
 | `--yes` | 关 | 跳过剧本预览确认，直接生成（无人值守） |
@@ -73,18 +127,39 @@ python gui\drama_gui.py
 | `--tts` | 关 | 开启角色配音（edge-tts，需联网） |
 | `--output` | `output/时间戳` | 输出目录 |
 
-## 输出目录结构
+### 输出目录结构
 
 ```
 output/<时间戳>/
 ├── script.json        # 剧本（含 character/style/shots）
-├── llm_raw.txt        # LLM 原始输出（仅解析失败时生成，供排查）
 ├── character.png      # 角色定妆图
 ├── shots/
 │   ├── shot_001.mp4
 │   └── ...
 └── final_drama.mp4    # 完整短剧
 ```
+
+---
+
+## Windows 一键安装包（最终用户） <a id="windows-installer"></a>
+
+仓库 `release/` 目录**内置一份最新开源版安装包**，下载即可使用，无需源码与 Python：
+
+```
+release/
+├── 短剧生成器安装向导.exe      # 双击安装（图形界面 + 命令行引擎）
+└── InstallFiles/
+    ├── drama-gui.exe
+    ├── drama-cli-onefile.exe
+    ├── 使用说明.txt
+    └── drama_icon.png
+```
+
+- 面向**最终用户**的图文安装与使用教程见 <a href="docs/安装使用图文教程.md">docs/安装使用图文教程.md</a>（同目录有单文件 HTML 版，图片已内嵌，可直接发送）
+- 安装向导会复制文件到 `%LOCALAPPDATA%\Programs\短剧生成器`（可选桌面快捷方式）
+- 如需从源码自行构建：`python -m pip install -r requirements.txt pyinstaller` → `powershell -ExecutionPolicy Bypass -File .\build_release.ps1`（本地生成 `release_os/` 与整包 zip，已 gitignore）
+
+---
 
 ## 代码结构
 
@@ -103,38 +178,16 @@ output/<时间戳>/
 │   └── 使用说明.txt        # 随安装包分发的用户手册
 ├── characters/presets/    # 预置角色 JSON（GUI 可选）
 ├── workflows/             # ComfyUI 工作流 JSON（供参考/进阶）
-├── assets/                # 图标
-├── release/               # 内置最新开源版 Windows 安装包（安装向导 + InstallFiles）
+├── assets/                # 品牌图、演示视频与图标
+├── docs/                  # 官网（GitHub Pages）与图文教程
+├── release/               # 内置最新开源版 Windows 安装包
 ├── scripts/               # 开发/调试脚本（不参与运行）
 ├── providers.example.json # 云端提供商配置模板（复制为 providers.json 使用）
 ├── requirements.txt       # Python 依赖
 └── build_release.ps1      # Windows 一键打包（PyInstaller）
 ```
 
-## 打包 Windows 安装程序
-
-仓库 `release/` 目录**已内置一份最新开源版安装包**，直接下载使用即可，无需自行打包：
-
-```
-release/
-├── 短剧生成器安装向导.exe      # 双击安装（图形界面 + 命令行引擎）
-└── InstallFiles/
-    ├── drama-gui.exe
-    ├── drama-cli-onefile.exe
-    ├── 使用说明.txt
-    └── drama_icon.png
-```
-
-安装向导把文件复制到 `%LOCALAPPDATA%\Programs\短剧生成器`（可选桌面快捷方式）。
-
-如需从源码自行构建（例如改了代码后再出包），需 Python 3.10+ 与 `pyinstaller`（spec 已排除 torch 等重依赖）：
-
-```powershell
-python -m pip install -r requirements.txt pyinstaller
-powershell -ExecutionPolicy Bypass -File .\build_release.ps1
-```
-
-脚本在本地生成 `release_os/`（含整包 `release_os.zip`），已加入 .gitignore 不入库。
+---
 
 ## 关键实现说明
 
@@ -154,10 +207,12 @@ powershell -ExecutionPolicy Bypass -File .\build_release.ps1
 | ffmpeg | 镜头拼接（需在 PATH 或由脚本探测） |
 | Python | ≥3.10（仅源码/打包需要；成品 exe 自带运行时） |
 
-- **16GB VRAM**（RTX 4060 Ti 级别）即可运行（逐镜头释放显存）。
+- **16GB VRAM**（RTX 4060 Ti 级别）即可运行。
 
-## 许可证
+---
+
+## 致谢与许可
 
 [MIT](./LICENSE)。第三方模型（MiniMax H3 / Z-Image / Qwen 等）遵循其各自许可。
 
-> 本项目已完全开源：无激活码、无试用限制。历史商业版本代码已从仓库清除。
+> 本仓库展示风格参考 [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage)。本工具已完全开源：无激活码、无试用限制。

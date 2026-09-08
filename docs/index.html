@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drama Factory · 短剧工厂 — 一句话生成竖屏短剧</title>
+<meta name="description" content="开源短剧生成工具：LLM 写剧本，ComfyUI + MiniMax H3 逐镜头生成竖屏短剧。完全免费、无激活码。">
+<meta property="og:title" content="Drama Factory · 短剧工厂">
+<meta property="og:description" content="一句话生成一部完整竖屏短剧。开源 · MIT · 无激活码。">
+<meta property="og:image" content="assets/brand/og.png">
+<style>
+:root{
+  --bg:#0a0e1a; --panel:#111a2e; --panel2:#0e1626; --line:#223052;
+  --txt:#e8edf7; --mut:#93a3bf; --acc:#ffb84d; --acc2:#6c8cff;
+  --green:#3ddc97;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;line-height:1.7}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a{color:var(--acc2);text-decoration:none}
+a:hover{text-decoration:underline}
+/* nav */
+nav{position:sticky;top:0;z-index:9;backdrop-filter:blur(8px);background:rgba(10,14,26,.82);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-weight:800;letter-spacing:.5px;color:var(--txt)}
+.brand em{font-style:normal;color:var(--acc)}
+nav ul{display:flex;gap:20px;list-style:none;font-size:14px}
+nav ul a{color:var(--mut)} nav ul a:hover{color:var(--txt)}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 86px;
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgba(108,140,255,.22), transparent 60%),
+    radial-gradient(700px 380px at -10% 110%, rgba(255,184,77,.12), transparent 60%);}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+h1{font-size:44px;line-height:1.25;letter-spacing:.5px}
+h1 .gold{color:var(--acc)}
+.sub{color:var(--mut);font-size:17px;margin:18px 0 10px}
+.pipe{color:var(--mut);font-size:14px;margin-bottom:26px}
+.pipe code{color:var(--green);background:rgba(61,220,151,.08);padding:1px 8px;border-radius:20px;font-size:13px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px}
+.btn.p{background:var(--acc);color:#1a1206}.btn.p:hover{filter:brightness(1.08)}
+.btn.s{background:var(--panel);border:1px solid var(--line);color:var(--txt)}
+.btn.s:hover{border-color:var(--acc2)}
+/* phone video */
+.phone{position:relative;width:250px;margin:0 auto}
+.phone .frame{border:3px solid #2c3b5e;border-radius:30px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.55);background:#000}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.phone .glow{position:absolute;inset:-24px;background:radial-gradient(closest-side,rgba(255,184,77,.25),transparent);filter:blur(14px);z-index:-1}
+.sec{padding:64px 0}
+.sec.alt{background:var(--panel2);border-block:1px solid var(--line)}
+.k{display:inline-flex;align-items:center;gap:8px;color:var(--acc);font-size:14px;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:30px;margin:8px 0 6px}
+.lead{color:var(--mut);margin-bottom:30px}
+/* demo cards */
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .18s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--acc)}
+.card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
+.card .cap{padding:12px 16px;font-size:14px;color:var(--mut)}
+.card .cap b{color:var(--txt);display:block;margin-bottom:2px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.step .n{color:var(--acc);font-weight:800;font-size:13px;letter-spacing:1px}
+.step h3{font-size:16px;margin:6px 0}
+.step p{font-size:13px;color:var(--mut)}
+/* features */
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.feat .f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.feat .f h3{font-size:16px;margin-bottom:6px}
+.feat .f h3 span{color:var(--acc);margin-right:8px}
+.feat .f p{font-size:14px;color:var(--mut)}
+/* quick start */
+pre{background:#0b1220;border:1px solid var(--line);border-radius:12px;padding:18px;overflow:auto;font-size:13px;line-height:1.6;color:#c9d6ec}
+pre .c{color:#5f718f} pre .k{color:#7aa2ff;font-weight:700;letter-spacing:0}
+code{font-family:Consolas,"Courier New",monospace}
+.notice{background:rgba(255,184,77,.08);border:1px solid rgba(255,184,77,.35);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:14px;color:#f3e2c2}
+/* dl */
+.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.dl .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+.dl .box h3{margin-bottom:6px}
+.dl .box p{color:var(--mut);font-size:13px;margin-bottom:14px}
+/* faq */
+.faq summary{cursor:pointer;font-weight:700;padding:12px 0;border-bottom:1px solid var(--line);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::after{content:"+";color:var(--acc);font-size:20px}
+.faq details[open] summary::after{content:"–"}
+.faq .a{color:var(--mut);padding:6px 0 16px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+@media(max-width:820px){
+ .hero .wrap{grid-template-columns:1fr}
+ h1{font-size:34px}
+ .steps{grid-template-columns:repeat(2,1fr)}
+ nav ul{display:none}
+ .phone{width:210px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">DRAMA<em> FACTORY</em> · 短剧工厂</a>
+    <ul>
+      <li><a href="#demo">演示</a></li>
+      <li><a href="#work">原理</a></li>
+      <li><a href="#features">特性</a></li>
+      <li><a href="#quickstart">快速开始</a></li>
+      <li><a href="#download">下载</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://github.com/admin2221/comfyui">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="pipe"><code>开源 · MIT</code>&nbsp;&nbsp;无激活码 · 无试用限制&nbsp;&nbsp;|&nbsp;&nbsp;ComfyUI + MiniMax H3</div>
+      <h1>一句话<br>生成一部<span class="gold">完整竖屏短剧</span></h1>
+      <p class="sub">输入故事梗概，LLM 导演分镜 → AI 角色定妆 → 逐镜头生成竖屏视频 → 自动拼接成片。</p>
+      <div class="cta">
+        <a class="btn p" href="#demo">▶ 看成片演示</a>
+        <a class="btn s" href="https://github.com/admin2221/comfyui" target="_blank">★ GitHub 开源仓库</a>
+      </div>
+    </div>
+    <div class="phone">
+      <div class="glow"></div>
+      <div class="frame">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/showcase/demo2-poster.jpg">
+          <source src="assets/showcase/demo2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="demo">
+  <div class="wrap">
+    <span class="k">Showcase · 成片演示</span>
+    <h2>真实生成，未经后期</h2>
+    <p class="lead">以下三段为输入一句话剧情后本工具自动产出的成品片段（含原生音频），点播放即可观看。</p>
+    <div class="demos">
+      <div class="card">
+        <video controls preload="metadata" playsinline poster="assets/showcase/demo1-poster.jpg">
+          <source src="assets/showcase/demo1.mp4" type="video/mp4">
+        </video>
+        <div class="cap"><b>示例一 · 古风穿越</b>一句话成片 · 竖屏 9:16</div>
+      </div>
+      <div class="card">
+        <video controls preload="metadata" playsinline poster="assets/showcase/demo2-poster.jpg">
+          <source src="assets/showcase/demo2.mp4" type="video/mp4">
+        </video>
+        <div class="cap"><b>示例二 · 都市奇缘</b>角色一致 · 原生音频</div>
+      </div>
+      <div class="card">
+        <video controls preload="metadata" playsinline poster="assets/showcase/demo3-poster.jpg">
+          <source src="assets/showcase/demo3.mp4" type="video/mp4">
+        </video>
+        <div class="cap"><b>示例三 · 悬疑反转</b>逐镜头成片 · 自动拼接</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="work">
+  <div class="wrap">
+    <span class="k">How it works · 工作原理</span>
+    <h2>四阶段流水线</h2>
+    <div class="steps">
+      <div class="step"><div class="n">STAGE 01</div><h3>LLM 剧本导演</h3><p>把一句话扩写为角色设定 + N 个竖屏分镜剧本（本地 Qwen3.5 或任意 OpenAI 兼容云端模型）。</p></div>
+      <div class="step"><div class="n">STAGE 02</div><h3>角色定妆</h3><p>Z-Image turbo 为每个角色生成定妆图，此后全片共用同一张参考图保证人设一致。</p></div>
+      <div class="step"><div class="n">STAGE 03</div><h3>逐镜头成片</h3><p>MiniMax H3 ref2va 逐镜头生成竖屏视频与原生音频，单镜头完成后即释放显存。</p></div>
+      <div class="step"><div class="n">STAGE 04</div><h3>自动拼接</h3><p>ffmpeg 拼接全部镜头并输出 final_drama.mp4，支持断点续跑与剧本复查。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <div class="wrap">
+    <span class="k">Features · 特性</span>
+    <h2>为“一句话拍剧”打磨到开箱即用</h2>
+    <div class="feat">
+      <div class="f"><h3><span>🎬</span>角色一致性</h3><p>全部镜头共用同一张定妆参考图（&lt;Picture 1&gt;），主角外观全程不漂移。</p></div>
+      <div class="f"><h3><span>♾️</span>时长不设限</h3><p>镜头数由剧本决定，目标时长 ≥90s 自动分幕扩写，逐镜头循环 + 断点续跑。</p></div>
+      <div class="f"><h3><span>🧠</span>剧本审查 / AI 审核</h3><p>生成剧本可预览确认，也支持接入云端大模型按你的要求自动改进剧本。</p></div>
+      <div class="f"><h3><span>🔉</span>原生音频</h3><p>视频生成即含声音；可选 edge-tts 为角色加配音，开箱即用。</p></div>
+      <div class="f"><h3><span>🖥️</span>GUI + CLI</h3><p>面向新手的图形界面（向导安装 / 桌面快捷方式）与面向自动化的命令行引擎并存。</p></div>
+      <div class="f"><h3><span>💾</span>省显存设计</h3><p>单镜头独立提交、跑完即释放，16GB 显存（RTX 4060 Ti 级）即可流畅工作。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="quickstart">
+  <div class="wrap">
+    <span class="k">Quick start · 源码运行</span>
+    <h2>五条命令跑起来</h2>
+    <p class="lead">前提：本机已启动 ComfyUI（127.0.0.1:8188），并安装 H3 ref2va / Z-Image turbo / ComfyUI-llama-cpp_vlm 节点与模型。</p>
+<pre><code><span class="c">:: 克隆并安装依赖</span>
+git clone https://github.com/admin2221/comfyui.git
+cd comfyui
+python -m pip install -r requirements.txt
+
+<span class="c">:: 一句话直接出片</span>
+python factory\drama_factory.py "一个落魄书生在雨夜捡到一枚能穿越时空的古镜"
+
+<span class="c">:: 断点续跑 / 复用剧本 / 打开图形界面</span>
+python factory\drama_factory.py "你的故事…" --resume
+python factory\drama_factory.py --script-json output\xxx\script.json
+python gui\drama_gui.py</code></pre>
+    <div class="notice">💡 拿到 Windows 安装包的最终用户不需要任何命令行：双击 <b>短剧生成器安装向导.exe</b> 即可安装并使用（见「下载」）。</div>
+  </div>
+</section>
+
+<section class="sec" id="download">
+  <div class="wrap">
+    <span class="k">Download · 下载</span>
+    <h2>Windows 一键安装包</h2>
+    <div class="dl">
+      <div class="box">
+        <h3>🪟 开源版安装向导</h3>
+        <p>内置图形界面与命令行引擎，双击即可安装；无激活码、无试用限制。</p>
+        <a class="btn p" href="https://github.com/admin2221/comfyui/tree/main/release" target="_blank">进入 release 下载</a>
+      </div>
+      <div class="box">
+        <h3>📖 图文安装教程</h3>
+        <p>三步安装 + 首次成片 + 常见问题，配真实界面截图。</p>
+        <a class="btn s" href="安装使用图文教程.html">打开图文教程</a>
+      </div>
+      <div class="box">
+        <h3>🧑‍💻 源码 / 参与开发</h3>
+        <p>MIT 协议，欢迎阅读源码、自打包或提出建议。</p>
+        <a class="btn s" href="https://github.com/admin2221/comfyui" target="_blank">前往 GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <span class="k">FAQ · 常见问题</span>
+    <h2>你可能想问</h2>
+    <div class="faq">
+      <details open><summary>需要多大的显卡？</summary><div class="a">16GB 显存（RTX 4060 Ti 级别）即可顺畅生成。逐镜头提交、跑完释放显存，是为省显存专门设计。</div></details>
+      <details><summary>完全免费吗？有激活码吗？</summary><div class="a">是的。本仓库为完全开源版（MIT）：无激活码、无试用门禁、无水印。云端剧本（可选）按你所填 API 的提供商计费。</div></details>
+      <details><summary>生成的视频有声音吗？</summary><div class="a">MiniMax H3 视频生成自带原生音频；也可开启 --tts 用 edge-tts 添加角色配音。</div></details>
+      <details><summary>一定要先装 ComfyUI 吗？</summary><div class="a">是。本工具是 ComfyUI 的“导演客户端”，需先启动本机 ComfyUI（默认 127.0.0.1:8188）并装有 H3 / Z-Image / llama_cpp 节点与模型。</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Drama Factory · 短剧工厂</b><br>基于 ComfyUI 生态的开源短剧生成工具</div>
+    <div>MIT License · <a href="https://github.com/admin2221/comfyui" target="_blank">github.com/admin2221/comfyui</a><br>
+    第三方模型（MiniMax H3 / Z-Image / Qwen）遵循其各自许可</div>
+  </div>
+</footer>
+
+</body>
+</html>
