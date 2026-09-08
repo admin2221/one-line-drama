@@ -11,6 +11,8 @@ __pycache__/
 # 生成的视频输出
 output/
 *.mp4
+# 例外：仓库自带的官网演示成片（有意入库）
+!assets/showcase/*.mp4
 
 # 临时/调试产物
 tmp.py
