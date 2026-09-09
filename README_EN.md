@@ -22,6 +22,7 @@
   <a href="#how-it-works">How It Works</a> &nbsp;·&nbsp;
   <a href="#quick-start">Quick Start</a> &nbsp;·&nbsp;
   <a href="#windows-installer">Windows Installer</a> &nbsp;·&nbsp;
+  <a href="#contact">Contact</a> &nbsp;·&nbsp;
   <a href="#license">License</a>
 </p>
 
@@ -166,6 +167,16 @@ release/          latest open-source Windows installer
 | Python | ≥3.10 (source/build only; the exe ships its own runtime) |
 
 - **16 GB VRAM** (RTX 4060 Ti class) is enough.
+
+---
+
+## Contact <a id="contact"></a>
+
+Questions, feedback, or collaboration? Reach the author:
+
+- **QQ**: `461765077` ([start a quick QQ chat](https://wpa.qq.com/msgrd?v=3&uin=461765077&site=qq&menu=yes))
+- **WeChat**: `wyq-kf` (please note “Drama Factory” when adding)
+- **Repository**: [github.com/admin2221/one-line-drama](https://github.com/admin2221/one-line-drama)
 
 ---
 
