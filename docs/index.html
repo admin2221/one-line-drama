@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" style=""><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Drama Factory · 短剧工厂 — 一句话生成竖屏短剧</title>
-<meta name="description" content="开源短剧生成工具：LLM 写剧本，ComfyUI + MiniMax H3 逐镜头生成竖屏短剧。完全免费、无激活码。">
-<meta property="og:title" content="Drama Factory · 短剧工厂">
-<meta property="og:description" content="一句话生成一部完整竖屏短剧。开源 · MIT · 无激活码。">
-<meta property="og:image" content="assets/brand/og.png">
+<meta name="description" content="开源短剧生成工具：LLM 写剧本，ComfyUI + MiniMax H3 逐镜头生成竖屏短剧。完全免费、无激活码。" />
+<meta property="og:title" content="Drama Factory · 短剧工厂" />
+<meta property="og:description" content="一句话生成一部完整竖屏短剧。开源 · MIT · 无激活码。" />
+<meta property="og:image" content="assets/brand/og.png" />
 <style>
 :root{
   --bg:#0a0e1a; --panel:#111a2e; --panel2:#0e1626; --line:#223052;
@@ -100,37 +99,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#">DRAMA<em> FACTORY</em> · 短剧工厂</a>
-    <ul>
+<nav style="">
+  <div class="wrap" style="">
+    <a class="brand" href="#" style="">DRAMA<em> FACTORY</em> · 短剧工厂</a>
+    <ul style="">
       <li><a href="#demo">演示</a></li>
       <li><a href="#work">原理</a></li>
       <li><a href="#features">特性</a></li>
       <li><a href="#quickstart">快速开始</a></li>
       <li><a href="#download">下载</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://github.com/admin2221/one-line-drama">GitHub</a></li>
+      <li><a href="#contact">联系</a></li>
+      <li><a href="https://github.com/admin2221/one-line-drama" style="">GitHub</a></li>
     </ul>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="pipe"><code>开源 · MIT</code>&nbsp;&nbsp;无激活码 · 无试用限制&nbsp;&nbsp;|&nbsp;&nbsp;ComfyUI + MiniMax H3</div>
-      <h1>一句话<br>生成一部<span class="gold">完整竖屏短剧</span></h1>
-      <p class="sub">输入故事梗概，LLM 导演分镜 → AI 角色定妆 → 逐镜头生成竖屏视频 → 自动拼接成片。</p>
-      <div class="cta">
+<section class="hero" style="">
+  <div class="wrap" style="">
+    <div style="">
+      <div class="pipe" style=""> 最新· MIT  AI视频制作  |  ComfyUI + MiniMax H3</div>
+      <h1 style="">一句话<br />生成一部<span class="gold">完整竖屏短剧</span></h1>
+      <p class="sub" style="">输入故事梗概，LLM 导演分镜 → AI 角色定妆 → 逐镜头生成竖屏视频 → 自动拼接成片。</p>
+      <div class="cta" style="">
         <a class="btn p" href="#demo">▶ 看成片演示</a>
-        <a class="btn s" href="https://github.com/admin2221/one-line-drama" target="_blank">★ GitHub 开源仓库</a>
+        
       </div>
     </div>
     <div class="phone">
       <div class="glow"></div>
       <div class="frame">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/showcase/demo2-poster.jpg">
-          <source src="assets/showcase/demo2.mp4" type="video/mp4">
+        <video autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="demo2-poster.jpg" style="">
+          <source src="demo2.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -142,22 +142,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
     <span class="k">Showcase · 成片演示</span>
     <h2>真实生成，未经后期</h2>
     <p class="lead">以下三段为输入一句话剧情后本工具自动产出的成品片段（含原生音频），点播放即可观看。</p>
-    <div class="demos">
+    <div class="demos" style="">
       <div class="card">
-        <video controls preload="metadata" playsinline poster="assets/showcase/demo1-poster.jpg">
-          <source src="assets/showcase/demo1.mp4" type="video/mp4">
+        <video controls="" preload="metadata" playsinline="" poster="demo1-poster.jpg" style="">
+          <source src="demo1.mp4" type="video/mp4" />
         </video>
         <div class="cap"><b>《非洲蜗牛奇遇记》 · 冒险动画</b>小蜗落水，老龟跃水勇救</div>
       </div>
       <div class="card">
-        <video controls preload="metadata" playsinline poster="assets/showcase/demo2-poster.jpg">
-          <source src="assets/showcase/demo2.mp4" type="video/mp4">
+        <video controls="" preload="metadata" playsinline="" poster="demo2-poster.jpg" style="">
+          <source src="demo2.mp4" type="video/mp4" />
         </video>
         <div class="cap"><b>《非洲大象》 · 家庭温情</b>水塘嬉戏 · 夕阳依偎</div>
       </div>
       <div class="card">
-        <video controls preload="metadata" playsinline poster="assets/showcase/demo3-poster.jpg">
-          <source src="assets/showcase/demo3.mp4" type="video/mp4">
+        <video controls="" preload="metadata" playsinline="" poster="demo3-poster.jpg" style="">
+          <source src="demo3.mp4" type="video/mp4" />
         </video>
         <div class="cap"><b>《归途·润泽山居》 · 都市返乡</b>爷爷交出家印与嘱托</div>
       </div>
@@ -193,7 +193,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
   </div>
 </section>
 
-<section class="sec alt" id="quickstart">
+<section class="sec alt" id="quickstart" style="">
   <div class="wrap">
     <span class="k">Quick start · 源码运行</span>
     <h2>五条命令跑起来</h2>
@@ -210,54 +210,51 @@ python factory\drama_factory.py "一个落魄书生在雨夜捡到一枚能穿�
 python factory\drama_factory.py "你的故事…" --resume
 python factory\drama_factory.py --script-json output\xxx\script.json
 python gui\drama_gui.py</code></pre>
-    <div class="notice">💡 拿到 Windows 安装包的最终用户不需要任何命令行：双击 <b>短剧生成器安装向导.exe</b> 即可安装并使用（见「下载」）。</div>
+    <div class="notice" style="">💡 拿到 Windows 安装包的最终用户不需要任何命令行：双击 <b>短剧生成器安装向导.exe</b> 即可安装并使用（见「下载」）。</div>
   </div>
 </section>
 
-<section class="sec" id="download">
-  <div class="wrap">
+<section class="sec" id="download" style="">
+  <div class="wrap" style="">
     <span class="k">Download · 下载</span>
-    <h2>Windows 一键安装包</h2>
+    <h2 style="">Windows 一键安装包</h2>
     <div class="dl">
-      <div class="box">
-        <h3>🪟 开源版安装向导</h3>
-        <p>内置图形界面与命令行引擎，双击即可安装；无激活码、无试用限制。</p>
-        <a class="btn p" href="https://github.com/admin2221/one-line-drama/tree/main/release" target="_blank">进入 release 下载</a>
+      <div class="box" style="">
+        <h3 style="">🪟 开源版安装向导</h3>
+        <p style="">内置图形界面与命令行引擎，双击即可安装；无激活码、无试用限制。</p>
+        <a class="btn p" href="https://github.com/admin2221/one-line-drama/tree/main/release" target="_blank" style="">进入 release 下载</a>
       </div>
-      <div class="box">
+      <div class="box" style="">
         <h3>📖 图文安装教程</h3>
         <p>三步安装 + 首次成片 + 常见问题，配真实界面截图。</p>
         <a class="btn s" href="安装使用图文教程.html">打开图文教程</a>
       </div>
-      <div class="box">
-        <h3>🧑‍💻 源码 / 参与开发</h3>
-        <p>MIT 协议，欢迎阅读源码、自打包或提出建议。</p>
-        <a class="btn s" href="https://github.com/admin2221/one-line-drama" target="_blank">前往 GitHub</a>
-      </div>
+      
     </div>
   </div>
 </section>
 
-<section class="sec alt" id="faq">
-  <div class="wrap">
+<section class="sec alt" id="faq" style="">
+  <div class="wrap" style="">
     <span class="k">FAQ · 常见问题</span>
     <h2>你可能想问</h2>
     <div class="faq">
-      <details open><summary>需要多大的显卡？</summary><div class="a">16GB 显存（RTX 4060 Ti 级别）即可顺畅生成。逐镜头提交、跑完释放显存，是为省显存专门设计。</div></details>
-      <details><summary>完全免费吗？有激活码吗？</summary><div class="a">是的。本仓库为完全开源版（MIT）：无激活码、无试用门禁、无水印。云端剧本（可选）按你所填 API 的提供商计费。</div></details>
-      <details><summary>生成的视频有声音吗？</summary><div class="a">MiniMax H3 视频生成自带原生音频；也可开启 --tts 用 edge-tts 添加角色配音。</div></details>
-      <details><summary>一定要先装 ComfyUI 吗？</summary><div class="a">是。本工具是 ComfyUI 的“导演客户端”，需先启动本机 ComfyUI（默认 127.0.0.1:8188）并装有 H3 / Z-Image / llama_cpp 节点与模型。</div></details>
+      <details open=""><summary style="">需要多大的显卡？</summary><div class="a">16GB 显存（RTX 4060 Ti 级别）即可顺畅生成。逐镜头提交、跑完释放显存，是为省显存专门设计。</div></details>
+      <details><summary style="">完全免费吗？有激活码吗？</summary><div class="a">是的。本仓库为完全开源版（MIT）：无激活码、无试用门禁、无水印。云端剧本（可选）按你所填 API 的提供商计费。</div></details>
+      <details><summary style="">生成的视频有声音吗？</summary><div class="a">MiniMax H3 视频生成自带原生音频；也可开启 --tts 用 edge-tts 添加角色配音。</div></details>
+      <details><summary style="">一定要先装 ComfyUI 吗？</summary><div class="a">是。本工具是 ComfyUI 的“导演客户端”，需先启动本机 ComfyUI（默认 127.0.0.1:8188）并装有 H3 / Z-Image / llama_cpp 节点与模型。</div></details>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div><b>Drama Factory · 短剧工厂</b><br>基于 ComfyUI 生态的开源短剧生成工具</div>
-    <div>MIT License · <a href="https://github.com/admin2221/one-line-drama" target="_blank">github.com/admin2221/one-line-drama</a><br>
-    第三方模型（MiniMax H3 / Z-Image / Qwen）遵循其各自许可</div>
+<footer style="" id="contact">
+  <div class="wrap" style="">
+    <div style="">Drama Factory · 短剧工厂<br />基于 ComfyUI 生态的开源短剧生成工具<br />MIT License · 第三方模型（MiniMax H3 / Z-Image / Qwen）遵循其各自许可</div>
+    <div style="">联系作者：QQ <a style="" href="https://wpa.qq.com/msgrd?v=3&amp;uin=461765077&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener">461765077</a> · 微信 <b>wyq-kf</b><br /><a style="" href="https://github.com/admin2221/one-line-drama" target="_blank" rel="noopener">github.com/admin2221/one-line-drama</a>
+    </div>
   </div>
 </footer>
 
-</body>
-</html>
+
+
+</body></html>
