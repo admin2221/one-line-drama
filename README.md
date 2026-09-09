@@ -24,7 +24,8 @@
   <a href="#windows-installer">Windows 安装包</a> &nbsp;·&nbsp;
   <a href="docs/安装使用图文教程.html">图文教程</a> &nbsp;·&nbsp;
   <a href="docs/安装使用图文教程.md">教程(Markdown)</a> &nbsp;·&nbsp;
-  <a href="README_EN.md">README_EN</a>
+  <a href="README_EN.md">README_EN</a> &nbsp;·&nbsp;
+  <a href="#contact">联系作者</a>
 </p>
 
 ---
@@ -208,6 +209,16 @@ release/
 | Python | ≥3.10（仅源码/打包需要；成品 exe 自带运行时） |
 
 - **16GB VRAM**（RTX 4060 Ti 级别）即可运行。
+
+---
+
+## 联系作者 <a id="contact"></a>
+
+问题反馈、使用交流或商务合作，欢迎联系作者：
+
+- **QQ**：`461765077`（点击 [QQ 快捷会话](https://wpa.qq.com/msgrd?v=3&uin=461765077&site=qq&menu=yes)）
+- **微信**：`wyq-kf`（添加好友时请备注「短剧工厂」）
+- **项目地址**：[github.com/admin2221/one-line-drama](https://github.com/admin2221/one-line-drama)
 
 ---
 
